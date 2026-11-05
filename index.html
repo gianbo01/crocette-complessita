@@ -111,7 +111,8 @@ header.top .spacer { flex: 1 1 40px; }
 
 /* ---------- rail ---------- */
 .rail { display: flex; flex-direction: column; gap: 22px; position: sticky; top: 18px; }
-@media (max-width: 860px) { .rail { position: static; } }
+/* Su telefono prima la domanda, poi i filtri. */
+@media (max-width: 860px) { .rail { position: static; order: 1; } }
 .rail section { display: flex; flex-direction: column; gap: 9px; }
 .rail label.field { display: flex; flex-direction: column; gap: 5px; }
 
