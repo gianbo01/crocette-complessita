@@ -1,0 +1,467 @@
+[
+  {
+    "id": "vf-approx-indset-3",
+    "appelli": [
+      "3 Febbraio 2023"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "Non esiste un algoritmo di approssimazione 3 per il problema Independent Set.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Independent Set non appartiene ad APX. Si dimostra con la tecnica del self-improvement (prodotto di grafi G[G]): da un'approssimazione r si costruisce in tempo polinomiale un'approssimazione √r, e iterando un numero costante di volte si ottiene un'approssimazione arbitrariamente vicina a 1, quindi la soluzione esatta e P = NP. Poiché 3 è una costante, sotto l'ipotesi (che implica P ≠ NP) un algoritmo di 3-approssimazione non può esistere.",
+    "chiavi": [
+      "APX",
+      "self-improvement",
+      "prodotto di grafi",
+      "approssimazione costante",
+      "P = NP"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-selfred-npcapconp",
+    "appelli": [
+      "3 Febbraio 2023",
+      "19 Giugno 2019"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "Se co-NP ∩ NP ≠ P allora ogni problema nella classe NP è self-reducible.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Il secondo teorema sulla self-reducibility afferma esattamente il contrario: se P ≠ NP ∩ co-NP allora esiste un problema in NP che NON è self-reducible. La premessa dell'implicazione è proprio l'ipotesi di quel teorema, quindi implica la negazione della conclusione.",
+    "chiavi": [
+      "secondo teorema della self-reducibility",
+      "NP ∩ co-NP",
+      "esiste un problema non self-reducible"
+    ],
+    "argomenti": [
+      "self-reducibility",
+      "classi-e-relazioni"
+    ],
+    "fonte": "studenti",
+    "nota": "Nel PDF di partenza la prima motivazione («Small Factor ∈ NP non è self-reducible») è barrata e riscritta: il teorema garantisce l'esistenza di un problema non self-reducible, non che sia Small Factor."
+  },
+  {
+    "id": "vf-apx-diverso-ptas",
+    "appelli": [
+      "3 Febbraio 2023",
+      "Simulazione d'Esame 2022",
+      "13 Settembre 2019"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "APX ≠ PTAS",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Se fosse APX = PTAS, Vertex Cover — che sta in APX grazie all'algoritmo 2-approssimante basato sul matching massimale — starebbe in PTAS, cioè avremmo una (1+ε)-approssimazione per ogni ε. Con il teorema del gap per Vertex Cover questo permetterebbe di decidere in tempo polinomiale un problema NP-completo, quindi P = NP e a maggior ragione NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "Vertex Cover ∈ APX",
+      "teorema del gap",
+      "(1+ε)-approssimazione",
+      "P = NP",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "approssimazione"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-p-non-in-np-cap-conp",
+    "appelli": [
+      "3 Febbraio 2023"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "Se A ∈ P allora A ∉ NP ∩ co-NP.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Vale esattamente l'implicazione opposta. Se A ∈ P esiste un algoritmo polinomiale che lo decide: quello stesso algoritmo funziona da verificatore sia per le istanze yes (quindi A ∈ NP) sia per le istanze no (quindi A ∈ co-NP), con certificato vuoto. Dunque P ⊆ NP ∩ co-NP e A ∈ P implica A ∈ NP ∩ co-NP.",
+    "chiavi": [
+      "P ⊆ NP",
+      "P ⊆ co-NP",
+      "certificato vuoto",
+      "verificatore"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-pspace-diverso-conp",
+    "appelli": [
+      "3 Febbraio 2023"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "PSPACE ≠ co-NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Se PSPACE = co-NP, siccome NP ⊆ PSPACE otterremmo NP ⊆ co-NP. Ma un'inclusione tra NP e co-NP si chiude sempre per complementazione: da NP ⊆ co-NP segue co-NP ⊆ NP e quindi NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "NP ⊆ PSPACE",
+      "NP ⊆ co-NP si chiude",
+      "complementazione",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "spazio",
+      "co-NP"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-tutte-clique-sotto-k",
+    "appelli": [
+      "3 Febbraio 2023"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "Esiste un algoritmo polinomiale che per ogni grafo G ed ogni valore k determina se tutte le clique di G hanno taglia inferiore a k.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Il problema descritto è il complemento di Clique: risponde yes se e solo se NON esiste una clique di taglia ≥ k. Un algoritmo polinomiale per esso darebbe subito un algoritmo polinomiale per Clique (basta negare l'output), e Clique è NP-completo: seguirebbe P = NP e quindi NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "complemento di Clique",
+      "negare l'output",
+      "Clique NP-completo",
+      "P = NP"
+    ],
+    "argomenti": [
+      "co-NP",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-smallfactor-non-npc",
+    "appelli": [
+      "3 Febbraio 2023"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "Il problema Small Factor non è NP-completo.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Small Factor ∈ NP ∩ co-NP (per le istanze yes il certificato è un fattore primo minore di r; per le istanze no lo è la fattorizzazione completa di q). Se Small Factor fosse NP-completo, ogni A ∈ NP si ridurrebbe con Karp a un problema che sta in co-NP; poiché co-NP è chiusa all'indietro rispetto alle riduzioni di Karp, si otterrebbe NP ⊆ co-NP e quindi NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "NP ∩ co-NP",
+      "certificato per le istanze no",
+      "co-NP chiusa per riduzioni",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-qsat-conp-completo",
+    "appelli": [
+      "3 Febbraio 2023"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "Quantified Sat è co-NP-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "QSAT è PSPACE-completo. Se fosse anche co-NP-completo, ogni problema di PSPACE si ridurrebbe a un problema che sta in co-NP, quindi PSPACE ⊆ co-NP; siccome NP ⊆ PSPACE si avrebbe NP ⊆ co-NP e dunque NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "QSAT PSPACE-completo",
+      "PSPACE ⊆ co-NP",
+      "NP ⊆ PSPACE",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "spazio",
+      "problemi-specifici"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-pspacec-non-in-conp",
+    "appelli": [
+      "3 Febbraio 2023"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "Se A è PSPACE-completo allora A ∉ co-NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Se un problema PSPACE-completo stesse in co-NP, ogni problema di PSPACE si ridurrebbe a esso e quindi apparterrebbe a co-NP (co-NP è chiusa all'indietro per riduzioni di Karp): PSPACE ⊆ co-NP. Da NP ⊆ PSPACE ⊆ co-NP seguirebbe NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "PSPACE ⊆ co-NP",
+      "co-NP chiusa per riduzioni",
+      "NP ⊆ PSPACE",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "spazio",
+      "co-NP"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-npc-non-in-conp",
+    "appelli": [
+      "3 Febbraio 2023"
+    ],
+    "ipotesi": "Assumendo co-NP ≠ NP",
+    "testo": "Se A è NP-completo allora A non è in co-NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Sia A NP-completo e supponiamo A ∈ co-NP. Per ogni B ∈ NP vale B ≤ A, e co-NP è chiusa all'indietro rispetto alle riduzioni di Karp, quindi B ∈ co-NP. Ne segue NP ⊆ co-NP e quindi NP = co-NP, contro l'ipotesi. È il lemma standard: un problema NP-completo dentro co-NP fa collassare le due classi.",
+    "chiavi": [
+      "B ≤ A",
+      "co-NP chiusa per riduzioni",
+      "NP ⊆ co-NP",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-pnp-implica-np-pspace",
+    "appelli": [
+      "22 Giugno 2023"
+    ],
+    "ipotesi": "",
+    "testo": "P ≠ NP ⟹ NP ≠ PSPACE",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "L'implicazione non è derivabile. Tutto ciò che sappiamo è P ⊆ NP ⊆ PSPACE, e nessuna delle due inclusioni è nota essere stretta. È perfettamente coerente con lo stato attuale delle conoscenze uno scenario in cui P ≠ NP e allo stesso tempo NP = PSPACE: la premessa separa P da NP, ma non dice nulla su dove cada PSPACE rispetto a NP.",
+    "chiavi": [
+      "P ⊆ NP ⊆ PSPACE",
+      "non derivabile",
+      "scenario NP = PSPACE",
+      "inclusione nota stretta"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "spazio"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-npconp-implica-pspace-p",
+    "appelli": [
+      "22 Giugno 2023"
+    ],
+    "ipotesi": "",
+    "testo": "NP ≠ co-NP ⟹ PSPACE ≠ P",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Si prova la contronominale: PSPACE = P ⟹ NP = co-NP. Se PSPACE = P allora, siccome P ⊆ NP ⊆ PSPACE, tutte le classi intermedie collassano su P, quindi NP = P. Ma P è chiusa per complemento, dunque co-NP = co-P = P = NP.",
+    "chiavi": [
+      "contronominale",
+      "collasso P ⊆ NP ⊆ PSPACE",
+      "P chiusa per complemento",
+      "co-P = P"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-pspacec-implica-nphard",
+    "appelli": [
+      "22 Giugno 2023",
+      "27 Settembre 2023",
+      "31 Gennaio 2024"
+    ],
+    "ipotesi": "",
+    "testo": "Se A è PSPACE-completo allora A è NP-hard.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Per definizione di PSPACE-completezza, ogni B ∈ PSPACE si riduce ad A. Siccome NP ⊆ PSPACE, in particolare ogni C ∈ NP si riduce ad A. Questa è esattamente la definizione di NP-hard. Nota che non serve alcuna ipotesi: vale incondizionatamente.",
+    "chiavi": [
+      "definizione di PSPACE-completo",
+      "NP ⊆ PSPACE",
+      "definizione di NP-hard",
+      "vale incondizionatamente"
+    ],
+    "argomenti": [
+      "completezza",
+      "riduzioni",
+      "spazio"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-smallfactor-non-p-selfred",
+    "appelli": [
+      "22 Giugno 2023"
+    ],
+    "ipotesi": "",
+    "testo": "Small Factor ∉ P ⟹ ogni A ∈ NP è self-reducible.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Small Factor ∈ NP ∩ co-NP. Se Small Factor ∉ P allora (NP ∩ co-NP) \\ P ≠ ∅, cioè P ≠ NP ∩ co-NP. Per il secondo teorema della self-reducibility questo implica che esiste un problema in NP che NON è self-reducible. La premessa implica quindi la negazione della conclusione.",
+    "chiavi": [
+      "Small Factor ∈ NP ∩ co-NP",
+      "P ≠ NP ∩ co-NP",
+      "secondo teorema della self-reducibility"
+    ],
+    "argomenti": [
+      "self-reducibility",
+      "problemi-specifici"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-eulpath-npc-sse-pnp",
+    "appelli": [
+      "22 Giugno 2023"
+    ],
+    "ipotesi": "",
+    "testo": "EulPath ∈ NPC ⟺ P = NP",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Due direzioni. (⟹) EulPath ∈ P (criterio di Eulero sui gradi dei vertici, più la connessione); se fosse anche NP-completo avremmo un problema NP-completo dentro P, e siccome ogni A ∈ NP si riduce a esso otterremmo NP ⊆ P, cioè P = NP. (⟸) se P = NP allora ogni problema non banale di P è NP-completo: dato A ∈ NP = P, per ridurlo a EulPath basta calcolare la risposta A(x) in polytime e mappare su un'istanza yes o no fissata di EulPath.",
+    "chiavi": [
+      "EulPath ∈ P",
+      "criterio di Eulero",
+      "NP-completo dentro P",
+      "problema non banale",
+      "calcolare la risposta in polytime"
+    ],
+    "argomenti": [
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "studenti",
+    "nota": "Nella direzione (⟸) serve che EulPath sia non banale, cioè abbia sia istanze yes che istanze no: altrimenti la riduzione non si può costruire."
+  },
+  {
+    "id": "vf-approx-indset-implica-vc",
+    "appelli": [
+      "22 Giugno 2023"
+    ],
+    "ipotesi": "",
+    "testo": "Se esiste un algoritmo di 3/2-approssimazione per Independent Set allora esiste un algoritmo di 3/2-approssimazione per Vertex Cover.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La premessa è impossibile: Independent Set non ammette approssimazione costante se P ≠ NP. Un'implicazione con premessa falsa è vera. In alternativa, ragionando dentro l'ipotesi: se una 3/2-approssimazione per Independent Set esistesse, il collasso che ne segue dà P = NP, quindi si risolve Vertex Cover esattamente in polytime, e la soluzione ottima è in particolare una 3/2-approssimazione. In entrambe le letture l'implicazione è vera.",
+    "chiavi": [
+      "premessa falsa",
+      "implicazione vera",
+      "Independent Set non ammette approssimazione costante",
+      "P = NP",
+      "soluzione esatta è anche approssimata"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "riduzioni",
+      "problemi-specifici"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-nphard-istanza-singola",
+    "appelli": [
+      "22 Giugno 2023",
+      "27 Settembre 2023"
+    ],
+    "ipotesi": "",
+    "testo": "Se il problema di ottimizzazione A è NP-hard e P ≠ NP, allora esiste un'istanza x ∈ I(A) tale che nessun algoritmo polinomiale fornisce la soluzione ottima per x.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La difficoltà di un problema è una proprietà uniforme su tutti gli infiniti input, non concentrabile su una singola istanza. Fissata una qualunque istanza x, la sua soluzione ottima è un oggetto fisso v: l'algoritmo che ignora l'input e stampa costantemente v è polinomiale (anzi, di tempo costante) e risolve x in modo ottimo. Quindi per NESSUNA istanza si può dire che non esista un algoritmo polinomiale che la risolve.",
+    "chiavi": [
+      "singola istanza",
+      "algoritmo costante che stampa v",
+      "difficoltà uniforme",
+      "non uniformità"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "approssimazione"
+    ],
+    "fonte": "studenti"
+  },
+  {
+    "id": "vf-pnp-implica-alg-per-ogni-np",
+    "appelli": [
+      "22 Giugno 2023"
+    ],
+    "ipotesi": "",
+    "testo": "P = NP ⟹ per ogni A ∈ NP esiste un algoritmo polinomiale che su ogni istanza x ∈ I(A) restituisce la risposta corretta A(x).",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "È la definizione stessa di P = NP: ogni problema di NP appartiene a P, cioè ammette un algoritmo deterministico che ne calcola la risposta corretta su ogni istanza in tempo polinomiale nella taglia dell'input. Non serve altro.",
+    "chiavi": [
+      "definizione di P = NP",
+      "NP ⊆ P",
+      "algoritmo deterministico polinomiale"
+    ],
+    "argomenti": [
+      "classi-e-relazioni"
+    ],
+    "fonte": "studenti"
+  }
+]

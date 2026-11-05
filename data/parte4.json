@@ -1,0 +1,449 @@
+[
+  {
+    "id": "vf-tau-non-p-reach-non-npc",
+    "appelli": [
+      "17 Giugno 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se TAUTOLOGY ∉ P allora REACHABILITY non è NP-completo.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Si prova la contronominale. Reachability ∈ P (è addirittura NL-completo). Se Reachability fosse NP-completo, ogni problema di NP si ridurrebbe a un problema di P e quindi starebbe in P: NP ⊆ P, cioè P = NP. Siccome P è chiusa per complemento, seguirebbe anche co-NP = co-P = P, e TAU, che è co-NP-completo, starebbe in P. La premessa afferma TAU ∉ P, quindi quel collasso è escluso e Reachability non può essere NP-completo.",
+    "chiavi": [
+      "contronominale",
+      "Reachability ∈ P",
+      "NP ⊆ P",
+      "P chiusa per complemento",
+      "TAU co-NP-completo"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-copspace-riduce-a-compl-implica-nphard",
+    "appelli": [
+      "17 Giugno 2025",
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se per ogni problema C ∈ co-PSPACE vale che C ≤ Ā, allora A è NP-hard.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "PSPACE è chiusa per complemento, quindi co-PSPACE = PSPACE e l'ipotesi dice che ogni problema di PSPACE si riduce ad Ā: Ā è PSPACE-hard. Per le riduzioni di Karp vale X ≤ Y ⟺ X̄ ≤ Ȳ, quindi da C ≤ Ā segue C̄ ≤ A. Siccome C percorre tutto PSPACE e PSPACE è chiusa per complemento, anche C̄ percorre tutto PSPACE: dunque ogni problema di PSPACE si riduce ad A, cioè A è PSPACE-hard. Essendo NP ⊆ PSPACE, ogni problema di NP si riduce ad A: A è NP-hard.",
+    "chiavi": [
+      "PSPACE chiusa per complemento",
+      "co-PSPACE = PSPACE",
+      "X ≤ Y ⟺ X̄ ≤ Ȳ",
+      "A è PSPACE-hard",
+      "NP ⊆ PSPACE"
+    ],
+    "argomenti": [
+      "completezza",
+      "riduzioni",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-npconp-implica-smallfactor-conpc",
+    "appelli": [
+      "17 Giugno 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se co-NP = NP allora SMALL FACTOR è co-NP-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Small Factor ∈ NP ∩ co-NP, quindi con NP = co-NP sta certamente in co-NP — ma appartenere a una classe non significa esserne completo: la completezza richiede che OGNI altro problema della classe si riduca a esso. NP = co-NP non implica P = NP, quindi possono esistere problemi di complessità intermedia, e Small Factor è il candidato tipico: potrebbe restare strettamente più facile dei problemi completi.",
+    "chiavi": [
+      "NP ∩ co-NP",
+      "appartenenza non è completezza",
+      "NP = co-NP non implica P = NP",
+      "complessità intermedia"
+    ],
+    "argomenti": [
+      "co-NP",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-np-almeno-due-istanze-sbagliate",
+    "appelli": [
+      "17 Giugno 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se A ∈ NP allora per ogni algoritmo polinomiale A' esistono almeno 2 istanze x₁, x₂ ∈ I(A) sulle quali l'algoritmo fallisce, ovvero A'(x₁) ≠ A(x₁) e A'(x₂) ≠ A(x₂).",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "L'enunciato quantifica su tutta la classe NP, e P ⊆ NP. Basta prendere A ∈ P come controesempio: per definizione esiste un algoritmo polinomiale corretto su OGNI istanza, quindi fallisce su zero istanze, non su almeno due. L'affermazione sarebbe plausibile solo restringendola ai problemi NP-hard sotto l'ipotesi P ≠ NP.",
+    "chiavi": [
+      "P ⊆ NP",
+      "controesempio A ∈ P",
+      "fallisce su zero istanze",
+      "restringere agli NP-hard"
+    ],
+    "argomenti": [
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a-leq-compl-conpc-implica-non-conp",
+    "appelli": [
+      "17 Giugno 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se A ≤ B̄ e B è co-NP-completo allora A ∉ co-NP.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Se B è co-NP-completo allora il suo complemento B̄ è NP-completo. La riduzione A ≤ B̄ dice soltanto che A ∈ NP, per chiusura di NP rispetto alle riduzioni di Karp. Ma stare in NP non vieta di stare anche in co-NP: A potrebbe cadere nell'intersezione NP ∩ co-NP, come Small Factor, o addirittura in P — e P ⊆ NP ∩ co-NP. L'affermazione confonde «sta in NP» con «non sta in co-NP».",
+    "chiavi": [
+      "B̄ è NP-completo",
+      "A ∈ NP per chiusura",
+      "NP ∩ co-NP",
+      "Small Factor",
+      "P ⊆ NP ∩ co-NP"
+    ],
+    "argomenti": [
+      "co-NP",
+      "riduzioni",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-npc-e-riduzione-implica-npc",
+    "appelli": [
+      "17 Giugno 2025",
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se A è NP-completo e A ≤ B allora B è NP-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La riduzione a partire da un problema NP-completo dà, per transitività, soltanto la NP-hardness di B. Per la NP-completezza serve la seconda condizione, B ∈ NP, che l'enunciato non assume: B potrebbe stare in PSPACE, in EXPTIME, o essere indecidibile. Controesempio concreto: SAT ≤ QSAT, ma QSAT non è NP-completo a meno che NP = PSPACE.",
+    "chiavi": [
+      "solo NP-hardness",
+      "transitività",
+      "serve B ∈ NP",
+      "SAT ≤ QSAT",
+      "NP = PSPACE"
+    ],
+    "argomenti": [
+      "completezza",
+      "riduzioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-conp-in-exptime",
+    "appelli": [
+      "17 Giugno 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Per ogni problema in co-NP esistono costanti a, k > 1 ed un algoritmo A tale che A risolve ogni istanza x di taglia n in tempo O(a^(n^k)).",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Vale co-NP ⊆ PSPACE ⊆ EXPTIME. Il passaggio chiave è la relazione fra spazio e tempo: SPACE(f(n)) ⊆ TIME(2^O(f(n))). Una macchina che usa spazio f(n) ha 2^O(f(n)) configurazioni distinte e, se termina, non può ripeterne nessuna — altrimenti andrebbe in loop. Con spazio polinomiale n^k il tempo è quindi limitato da 2^O(n^k), che è esattamente la forma a^(n^k) richiesta.",
+    "chiavi": [
+      "co-NP ⊆ PSPACE",
+      "SPACE(f) ⊆ TIME(2^O(f))",
+      "configurazioni distinte",
+      "spazio polinomiale",
+      "EXPTIME"
+    ],
+    "argomenti": [
+      "spazio",
+      "classi-e-relazioni",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-npc-sbaglia-su-tutte-le-grandi",
+    "appelli": [
+      "17 Giugno 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se un problema A è NP-completo e P ≠ NP, allora per ogni algoritmo polinomiale esiste un n tale che per ogni istanza di taglia maggiore di n l'algoritmo fornisce una soluzione errata.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "P ≠ NP garantisce che ogni algoritmo polinomiale sbagli su QUALCHE istanza, non su TUTTE quelle oltre una certa taglia. Controesempio: l'algoritmo che ignora l'input e risponde sempre yes è corretto su tutte le infinite istanze yes di A, a ogni taglia. Il fallimento è inevitabile ma sparso: l'insieme delle istanze sbagliate è infinito, non cofinito.",
+    "chiavi": [
+      "sbaglia su qualche istanza",
+      "algoritmo che risponde sempre yes",
+      "corretto sulle istanze yes di ogni taglia",
+      "infinito ma non cofinito"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-ptas-polinomio-fissato",
+    "appelli": [
+      "17 Giugno 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se un problema di ottimizzazione A è nella classe PTAS allora esiste una funzione polinomiale p() ed un algoritmo che per ogni istanza x e per ogni costante c > 1, in tempo O(p(|x| · 2^c)), fornisce una c-approssimazione alla soluzione ottima per x.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "In un PTAS il tempo è polinomiale in |x| per ogni ε fissato (con c = 1 + ε), ma il GRADO del polinomio può dipendere da ε in modo arbitrario: per esempio O(|x|^(1/ε)) è un PTAS legittimo. L'enunciato fissa invece un unico polinomio p e mette la dipendenza da c solo dentro l'argomento, obbligando il grado a restare costante al variare della precisione richiesta. Quella è la definizione di EPTAS (e a maggior ragione di FPTAS): una condizione più forte, non garantita da un generico problema in PTAS.",
+    "chiavi": [
+      "il grado dipende da ε",
+      "|x|^(1/ε)",
+      "polinomio unico fissato",
+      "EPTAS",
+      "condizione più forte"
+    ],
+    "argomenti": [
+      "approssimazione"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-np-pspace-implica-conp-np",
+    "appelli": [
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se NP ≠ PSPACE allora co-NP ≠ NP.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La contronominale sarebbe NP = co-NP ⟹ NP = PSPACE, e non è nota. È coerente con lo stato attuale delle conoscenze uno scenario in cui P = NP = co-NP e al tempo stesso NP ≠ PSPACE: la separazione fra NP e PSPACE non impone nulla sulla relazione interna fra NP e co-NP.",
+    "chiavi": [
+      "contronominale",
+      "scenario P = NP = co-NP",
+      "separazione fra NP e PSPACE",
+      "non impone nulla"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-reach-npc-implica-tau-in-np",
+    "appelli": [
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se REACHABILITY è NP-completo allora TAUTOLOGY ∈ NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Reachability ∈ P (è NL-completo, e NL ⊆ P). Se fosse NP-completo, ogni problema di NP si ridurrebbe a un problema di P e quindi starebbe in P: P = NP. Siccome P è chiusa per complemento, seguirebbe co-NP = co-P = P = NP. TAU è co-NP-completo, quindi in quello scenario starebbe in P e in particolare in NP.",
+    "chiavi": [
+      "Reachability ∈ P",
+      "NL ⊆ P",
+      "P = NP",
+      "P chiusa per complemento",
+      "TAU co-NP-completo"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-smallfactor-conpc-implica-npconp",
+    "appelli": [
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se SMALL FACTOR è co-NP-completo allora co-NP = NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Small Factor ∈ NP ∩ co-NP. Se fosse co-NP-completo, ogni problema di co-NP si ridurrebbe a esso; ma esso sta anche in NP, e NP è chiusa all'indietro rispetto alle riduzioni di Karp, quindi ogni problema di co-NP starebbe in NP: co-NP ⊆ NP e dunque NP = co-NP. Da confrontare con la forma inversa «se co-NP = NP allora Small Factor è co-NP-completo», che invece è falsa: l'appartenenza non dà la completezza.",
+    "chiavi": [
+      "NP ∩ co-NP",
+      "ogni problema di co-NP si ridurrebbe",
+      "NP chiusa per riduzioni",
+      "co-NP ⊆ NP",
+      "la forma inversa è falsa"
+    ],
+    "argomenti": [
+      "co-NP",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-istanza-che-sconfigge-tutti",
+    "appelli": [
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se A è NP-completo e P ≠ co-NP allora esiste un'istanza x ∈ I(A) su cui ogni algoritmo polinomiale A' fallisce, ovvero A'(x) ≠ A(x).",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "L'ordine dei quantificatori è ∃x ∀A', cioè si chiede UNA istanza che sconfigga TUTTI gli algoritmi polinomiali. È impossibile: per qualunque istanza x fissata esiste l'algoritmo banale, di tempo costante, che ha la risposta corretta per x cablata nel codice. La difficoltà di un problema NP-completo si formula come ∀A' ∃x (ogni algoritmo sbaglia da qualche parte), non come ∃x ∀A'.",
+    "chiavi": [
+      "ordine dei quantificatori",
+      "∃x ∀A'",
+      "risposta cablata nel codice",
+      "tempo costante",
+      "∀A' ∃x"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-disgiunzione-conp-oppure-non-npc",
+    "appelli": [
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se A ∈ co-NP allora per ogni problema B vale che ((A ≤ B̄) ∨ (B non è NPC)).",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Conviene riscrivere la disgiunzione: (X ∨ ¬Y) è equivalente all'implicazione (Y ⟹ X), quindi l'enunciato dice «se B è NP-completo allora A ≤ B̄». E questo vale sempre: se B è NP-completo il suo complemento B̄ è co-NP-completo, e A ∈ co-NP si riduce per definizione di completezza a ogni problema co-NP-completo. L'implicazione è dunque verificata per ogni B, e l'affermazione è vera.",
+    "chiavi": [
+      "(X ∨ ¬Y) equivale a (Y ⟹ X)",
+      "B̄ è co-NP-completo",
+      "definizione di completezza",
+      "vale per ogni B"
+    ],
+    "argomenti": [
+      "co-NP",
+      "riduzioni",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-npspace-in-exptime",
+    "appelli": [
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Per ogni problema in NPSPACE esistono costanti a, k > 1 ed un algoritmo A tale che A risolve ogni istanza x di taglia n in tempo O(a^(n^k)).",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Per il teorema di Savitch NPSPACE = PSPACE, quindi basta ragionare sullo spazio polinomiale deterministico. Vale poi SPACE(f(n)) ⊆ TIME(2^O(f(n))): con spazio f(n) le configurazioni distinte sono 2^O(f(n)) e una macchina che termina non può ripeterne nessuna. Con spazio polinomiale n^k il tempo è limitato da 2^O(n^k), della forma a^(n^k): NPSPACE ⊆ EXPTIME.",
+    "chiavi": [
+      "teorema di Savitch",
+      "NPSPACE = PSPACE",
+      "SPACE(f) ⊆ TIME(2^O(f))",
+      "configurazioni distinte",
+      "EXPTIME"
+    ],
+    "argomenti": [
+      "spazio",
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-vc-leq-logspace-implica-indset-ptas",
+    "appelli": [
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se un problema A è in SPACE(log n) e VERTEX COVER ≤ A, allora INDEPENDENT SET ∈ PTAS.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "SPACE(log n) = L ⊆ P (una macchina con O(log n) bit di memoria ha poly(n) configurazioni, quindi se termina lo fa in tempo polinomiale). Se Vertex Cover, che è NP-completo, si riduce ad A ∈ P, allora Vertex Cover ∈ P e dunque P = NP. Con P = NP ogni problema di ottimizzazione in NP si risolve esattamente in tempo polinomiale e la gerarchia dell'approssimazione collassa: P = FPTAS = PTAS = APX. Independent Set cade quindi in PTAS.",
+    "chiavi": [
+      "L ⊆ P",
+      "poly(n) configurazioni",
+      "Vertex Cover NP-completo",
+      "P = NP",
+      "P = FPTAS = PTAS = APX"
+    ],
+    "argomenti": [
+      "spazio",
+      "approssimazione",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-ptas-fptas-implica-npconp",
+    "appelli": [
+      "22 Giugno 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se PTAS = FPTAS allora co-NP = NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Esistono problemi fortemente NP-hard — per esempio Makespan, lo scheduling a minimo makespan — che ammettono un PTAS ma non possono ammettere un FPTAS a meno che P = NP: su un problema fortemente NP-hard un FPTAS, il cui tempo è polinomiale anche in 1/ε, permetterebbe di scendere sotto la granularità dei valori interi e quindi di calcolare la soluzione esatta in tempo polinomiale. Dunque PTAS = FPTAS implica P = NP, e siccome P è chiusa per complemento segue co-NP = co-P = P = NP.",
+    "chiavi": [
+      "fortemente NP-hard",
+      "Makespan",
+      "FPTAS polinomiale anche in 1/ε",
+      "soluzione esatta",
+      "P chiusa per complemento"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  }
+]

@@ -1,0 +1,7 @@
+# Materiale del corso e file generati: restano in locale
+contesto/
+contesto-es2/
+*.zip
+*.pdf
+*.jpeg
+complessita-vf.html

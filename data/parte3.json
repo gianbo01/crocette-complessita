@@ -1,0 +1,925 @@
+[
+  {
+    "id": "vf-approx-r-indset-implica-2r-clique",
+    "appelli": [
+      "22 Settembre 2020"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Se esistesse un algoritmo di approssimazione r per il problema Independent Set allora esisterebbe anche un algoritmo di approssimazione 2r per il problema Clique.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Independent Set e Clique sono legati dalla complementazione del grafo: un insieme I è independent set in G se e solo se è una clique in Ḡ. La trasformazione G ↦ Ḡ è polinomiale e conserva ESATTAMENTE le taglie degli insiemi, quindi un'r-approssimazione per Independent Set dà direttamente un'r-approssimazione per Clique. A maggior ragione una 2r-approssimazione, perché 2r ≥ r e il vincolo richiesto è più debole.",
+    "chiavi": [
+      "grafo complemento Ḡ",
+      "independent set in G, clique nel complemento",
+      "conserva le taglie",
+      "2r ≥ r vincolo più debole"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "riduzioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-tsp-3approx-implica-tspdec-conp",
+    "appelli": [
+      "22 Settembre 2020"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Se esiste un algoritmo di 3-approssimazione per TSP (problema di ottimizzazione) allora il problema di decisione TSPDec ∈ co-NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Per TSP generale il teorema del gap esclude ogni approssimazione costante se P ≠ NP: dalla NP-completezza di Hamiltonian Cycle si costruisce un'istanza in cui distinguere tour «corti» da tour «lunghissimi» decide l'hamiltonicità. Quindi la premessa implica P = NP, e allora TSPDec ∈ NP = P = co-P = co-NP. L'implicazione è vera (fra l'altro con premessa impossibile sotto l'ipotesi).",
+    "chiavi": [
+      "teorema del gap",
+      "Hamiltonian Cycle",
+      "nessuna approssimazione costante",
+      "P = NP",
+      "co-P = P"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-vc-non-pspace-completo",
+    "appelli": [
+      "22 Settembre 2020"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Vertex Cover non è PSPACE-completo.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Vertex Cover ∈ NP. Se fosse PSPACE-completo, ogni problema di PSPACE si ridurrebbe a un problema di NP, quindi PSPACE ⊆ NP e, con NP ⊆ PSPACE, si avrebbe NP = PSPACE. Ma PSPACE è chiusa per complemento, quindi co-NP = co-PSPACE = PSPACE = NP, contro l'ipotesi.",
+    "chiavi": [
+      "VC ∈ NP",
+      "PSPACE ⊆ NP",
+      "NP = PSPACE",
+      "PSPACE chiusa per complemento",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "spazio",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-or-np-conp-in-np",
+    "appelli": [
+      "22 Settembre 2020"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Per ogni coppia di problemi A ∈ NP e B ∈ co-NP il problema C definito da C(x) = A(x) ∨ B(x) appartiene alla classe NP.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Basta un controesempio. Si prenda A il problema banale che risponde sempre no (A ∈ P ⊆ NP) e B un problema co-NP-completo, per esempio TAU. Allora C(x) = no ∨ B(x) = B(x), cioè C coincide con B. Se C ∈ NP avremmo un problema co-NP-completo dentro NP, quindi co-NP ⊆ NP e dunque NP = co-NP, contro l'ipotesi. Nota il contrasto con il caso A, B ∈ NP, dove l'unione resta in NP.",
+    "chiavi": [
+      "controesempio",
+      "A banale sempre no",
+      "C coincide con B",
+      "co-NP-completo dentro NP",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-p-diverso-conp-implica-apx-ptas",
+    "appelli": [
+      "22 Settembre 2020"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Se P ≠ co-NP allora APX ≠ PTAS.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Si prova la contronominale: APX = PTAS ⟹ P = co-NP. Se APX = PTAS allora Vertex Cover ∈ APX starebbe in PTAS, e con il teorema del gap per Vertex Cover si deciderebbe in polytime un problema NP-completo, quindi P = NP. Da P = NP, complementando, co-NP = co-P = P.",
+    "chiavi": [
+      "contronominale",
+      "Vertex Cover ∈ APX",
+      "teorema del gap",
+      "P = NP",
+      "co-P = P"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-tautologia-poly-implica-np-in-p",
+    "appelli": [
+      "22 Settembre 2020",
+      "15 Luglio 2019",
+      "Simulazione d'Esame 2"
+    ],
+    "ipotesi": "",
+    "testo": "Se esistesse un algoritmo polinomiale per decidere se una formula Booleana è una tautologia, allora ogni problema in NP potrebbe essere risolto in tempo polinomiale.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "TAU è co-NP-completo. Se TAU ∈ P allora ogni B ∈ co-NP si riduce a TAU ∈ P, quindi co-NP ⊆ P, cioè co-NP = P (l'inclusione P ⊆ co-NP è ovvia). Complementando entrambi i membri: NP = co-P = P. Dunque ogni problema di NP si risolve in tempo polinomiale.",
+    "chiavi": [
+      "TAU co-NP-completo",
+      "co-NP = P",
+      "complementando entrambi i membri",
+      "co-P = P",
+      "P = NP"
+    ],
+    "argomenti": [
+      "co-NP",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-p-diverso-np-sotto-ipotesi",
+    "appelli": [
+      "Simulazione d'Esame 2022",
+      "13 Settembre 2019"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "P ≠ NP",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Fuori dall'ipotesi sarebbe la questione aperta per eccellenza, ma qui l'assunzione la decide. Per assurdo: se P = NP allora, siccome P è chiusa per complemento, co-NP = co-P = P = NP, cioè NP = co-NP, contro l'ipotesi. Quindi sotto NP ≠ co-NP l'affermazione è dimostrabilmente vera, non «irrisolta».",
+    "chiavi": [
+      "NP ≠ co-NP",
+      "P chiusa per complemento",
+      "co-P = P",
+      "l'assunzione la decide"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-time-ntime-2on",
+    "appelli": [
+      "Simulazione d'Esame 2022"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "TIME(2^O(n)) = NTIME(2^O(n))",
+    "risposta": "IRRISOLTA",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "È la questione EXP vs NEXP. Non è nota né l'uguaglianza né la disuguaglianza, e l'ipotesi NP ≠ co-NP non la decide. Con la tecnica del padding si sa che P = NP ⟹ EXP = NEXP, ma qui l'ipotesi ci dà P ≠ NP, e l'implicazione non si può usare in quel verso: da P ≠ NP non segue EXP ≠ NEXP. Attenzione a non confondere il verso del padding.",
+    "chiavi": [
+      "EXP vs NEXP",
+      "padding",
+      "P = NP ⟹ EXP = NEXP",
+      "verso del padding",
+      "questione EXP vs NEXP"
+    ],
+    "argomenti": [
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-p-uguale-apx",
+    "appelli": [
+      "Simulazione d'Esame 2022",
+      "13 Settembre 2019"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "P = APX",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Sotto l'ipotesi vale P ≠ NP. Vertex Cover appartiene ad APX grazie all'algoritmo 2-approssimante basato sul matching massimale, ma la sua versione di decisione è NP-completa. Se P = APX allora Vertex Cover ∈ P e quindi P = NP: assurdo. Nota che serve un problema che sia contemporaneamente in APX e NP-hard, ed è proprio il caso di Vertex Cover.",
+    "chiavi": [
+      "Vertex Cover ∈ APX",
+      "matching massimale",
+      "VC NP-completo",
+      "P = NP assurdo"
+    ],
+    "argomenti": [
+      "approssimazione"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-vc-non-in-conp",
+    "appelli": [
+      "Simulazione d'Esame 2022"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Vertex Cover ∉ co-NP",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Vertex Cover è NP-completo. Se stesse in co-NP, allora per ogni A ∈ NP varrebbe A ≤ Vertex Cover ∈ co-NP, e per chiusura all'indietro di co-NP rispetto alle riduzioni di Karp si avrebbe A ∈ co-NP. Dunque NP ⊆ co-NP e quindi NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "VC NP-completo",
+      "co-NP chiusa per riduzioni",
+      "NP ⊆ co-NP",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "co-NP",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-vc-in-conp",
+    "appelli": [
+      "13 Settembre 2019"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Vertex Cover ∈ co-NP",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "È la formulazione complementare della precedente, e la risposta si ribalta. Vertex Cover è NP-completo: se stesse in co-NP, ogni A ∈ NP si ridurrebbe a esso e starebbe in co-NP per chiusura, dando NP ⊆ co-NP e quindi NP = co-NP, contro l'ipotesi. Attenzione a leggere bene il verso dell'appartenenza prima di rispondere.",
+    "chiavi": [
+      "VC NP-completo",
+      "chiusura di co-NP",
+      "NP = co-NP",
+      "attenzione al verso dell'appartenenza"
+    ],
+    "argomenti": [
+      "co-NP",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-ntime-logn-in-p",
+    "appelli": [
+      "Simulazione d'Esame 2022"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "NTIME(log n) ⊆ P",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Una macchina non deterministica che gira in tempo O(log n) compie al più O(log n) scelte binarie, quindi il suo albero di computazione ha al più 2^O(log n) = poly(n) rami, ciascuno lungo O(log n). Simulandoli tutti deterministicamente si ottiene un algoritmo di tempo polinomiale. Dunque NTIME(log n) ⊆ P. È lo stesso ragionamento con cui si mostra che un non determinismo logaritmico non aggiunge potenza.",
+    "chiavi": [
+      "O(log n) scelte binarie",
+      "2^O(log n) = poly(n) rami",
+      "simulazione deterministica",
+      "non determinismo logaritmico non aggiunge potenza"
+    ],
+    "argomenti": [
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-qsat-non-in-p",
+    "appelli": [
+      "Simulazione d'Esame 2022"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "QSAT ∉ P",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "QSAT è PSPACE-completo, quindi QSAT ∈ P equivarrebbe a P = PSPACE. Ma se P = PSPACE allora, siccome P ⊆ NP ⊆ PSPACE, si avrebbe P = NP e dunque NP = co-NP, contro l'ipotesi. Perciò P ≠ PSPACE e QSAT ∉ P. Senza l'ipotesi la domanda sarebbe «irrisolta» (è la questione P vs PSPACE), ma l'assunzione la decide.",
+    "chiavi": [
+      "QSAT PSPACE-completo",
+      "P = PSPACE",
+      "NP = co-NP",
+      "l'ipotesi decide la domanda"
+    ],
+    "argomenti": [
+      "spazio",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-smallfactor-non-in-p",
+    "appelli": [
+      "Simulazione d'Esame 2022"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Small Factor ∉ P",
+    "risposta": "IRRISOLTA",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Small Factor ∈ NP ∩ co-NP, ma non si sa se stia in P: è in sostanza la questione della fattorizzazione in tempo polinomiale, tuttora aperta. L'ipotesi NP ≠ co-NP non la decide: dice che NP e co-NP sono classi distinte, il che è compatibile sia con Small Factor ∈ P sia con Small Factor ∈ (NP ∩ co-NP) \\ P. Da confrontare con QSAT ∉ P, che invece l'ipotesi decide.",
+    "chiavi": [
+      "NP ∩ co-NP",
+      "fattorizzazione",
+      "questione aperta",
+      "l'ipotesi non decide",
+      "confronto con QSAT"
+    ],
+    "argomenti": [
+      "problemi-specifici",
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-savitch-space-nspace-2on",
+    "appelli": [
+      "13 Settembre 2019"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "SPACE(2^O(n)) = NSPACE(2^O(n))",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Per il teorema di Savitch, NSPACE(f(n)) ⊆ SPACE(f(n)²) per ogni f(n) ≥ log n costruibile. Con f(n) = 2^O(n) si ha f(n)² = (2^cn)² = 2^2cn, che è ancora della forma 2^O(n): la classe è chiusa rispetto all'elevamento al quadrato. Quindi NSPACE(2^O(n)) ⊆ SPACE(2^O(n)), e l'inclusione inversa è ovvia perché il determinismo è un caso particolare del non determinismo.",
+    "chiavi": [
+      "teorema di Savitch",
+      "NSPACE(f) ⊆ SPACE(f al quadrato)",
+      "(2^cn)² = 2^2cn",
+      "classe chiusa al quadrato",
+      "inclusione inversa ovvia"
+    ],
+    "argomenti": [
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-nspace-logn-in-p",
+    "appelli": [
+      "13 Settembre 2019",
+      "15 Luglio 2019"
+    ],
+    "ipotesi": "",
+    "testo": "NSPACE(log n) ⊆ P",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "NSPACE(log n) = NL, e vale NL ⊆ P. La dimostrazione diretta usa il grafo delle configurazioni: una macchina che usa O(log n) bit di memoria di lavoro ha 2^O(log n) = poly(n) configurazioni distinte. Costruito in tempo polinomiale il grafo che ha per nodi le configurazioni e per archi le transizioni, accettare equivale a decidere la raggiungibilità dalla configurazione iniziale a quella accettante, e la raggiungibilità si decide in tempo polinomiale con una visita.",
+    "chiavi": [
+      "NL",
+      "grafo delle configurazioni",
+      "poly(n) configurazioni",
+      "raggiungibilità",
+      "visita in polytime"
+    ],
+    "argomenti": [
+      "spazio",
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-2phampath-non-in-p",
+    "appelli": [
+      "13 Settembre 2019"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "2-Player-Hamiltonian-Path ∉ P",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "2P-HamPath è PSPACE-completo (lo si dimostra riducendo da 2-Player-SAT). Se stesse in P avremmo P = PSPACE; siccome P ⊆ NP ⊆ PSPACE questo forza P = NP e dunque NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "2P-HamPath PSPACE-completo",
+      "riducendo da 2-Player-SAT",
+      "P = PSPACE",
+      "P = NP",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "spazio",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-2phampath-poly-implica-pnp",
+    "appelli": [
+      "19 Giugno 2019"
+    ],
+    "ipotesi": "",
+    "testo": "Se esistesse un algoritmo polinomiale deterministico per 2-Player-HamPath allora varrebbe la relazione P = NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "2P-HamPath è PSPACE-completo. Se stesse in P allora ogni problema di PSPACE si ridurrebbe a un problema di P e quindi starebbe in P: P = PSPACE. Siccome P ⊆ NP ⊆ PSPACE, tutte le classi intermedie collassano e in particolare P = NP.",
+    "chiavi": [
+      "PSPACE-completo",
+      "P = PSPACE",
+      "P ⊆ NP ⊆ PSPACE",
+      "collasso delle classi intermedie"
+    ],
+    "argomenti": [
+      "spazio",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-np-in-conp-implica-conp-in-np",
+    "appelli": [
+      "19 Giugno 2019"
+    ],
+    "ipotesi": "",
+    "testo": "Se NP ⊆ co-NP allora co-NP ⊆ NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Le due inclusioni sono equivalenti per complementazione. Sia A ∈ co-NP, cioè Ā ∈ NP. Per ipotesi NP ⊆ co-NP, quindi Ā ∈ co-NP, cioè la doppia complementazione A = Ā̄ sta in NP. Dunque co-NP ⊆ NP. In generale NP ⊆ co-NP ⟺ co-NP ⊆ NP ⟺ NP = co-NP: fra queste due classi non può esistere un'inclusione stretta.",
+    "chiavi": [
+      "complementazione",
+      "Ā ∈ NP",
+      "doppia complementazione",
+      "non può esistere inclusione stretta",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-turing-ma-non-karp",
+    "appelli": [
+      "19 Giugno 2019"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Esistono problemi A ∈ NP e B ∈ co-NP tali che A ≤ₜ B e A ≰ B (esiste una riduzione alla Turing ma non alla Karp).",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Si prendano A = SAT (NP-completo) e B = TAU (co-NP-completo). SAT ≤ₜ TAU vale per il lemma «X ∈ NP, Y co-NP-completo ⟹ X ≤ₜ Y»: la riduzione alla Turing interroga l'oracolo per TAU e ne nega l'output, cosa che una riduzione alla Karp non può fare. Invece SAT ≤ TAU con Karp darebbe NP ⊆ co-NP e quindi NP = co-NP, contro l'ipotesi. Sotto l'ipotesi, dunque, le riduzioni alla Turing sono strettamente più potenti di quelle alla Karp.",
+    "chiavi": [
+      "SAT e TAU",
+      "riduzione alla Turing nega l'output",
+      "riduzione alla Karp",
+      "NP = co-NP",
+      "Turing strettamente più potente"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-lowerbound-loglog",
+    "appelli": [
+      "15 Luglio 2019",
+      "Simulazione d'Esame 2"
+    ],
+    "ipotesi": "",
+    "testo": "Se ogni algoritmo che risolve SAT ha complessità Ω(n + n^(log log n / log n)) allora P ≠ NP.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Semplifichiamo il secondo addendo: n^(log log n / log n) = 2^(log n · log log n / log n) = 2^(log log n) = log n. Il bound è quindi Ω(n + log n) = Ω(n), cioè il lower bound banale del tempo necessario a leggere l'input, vero per qualunque algoritmo. Da un'affermazione sempre vera non si può dedurre P ≠ NP.",
+    "chiavi": [
+      "semplificare l'addendo",
+      "2^(log log n) = log n",
+      "Ω(n) banale",
+      "leggere l'input",
+      "affermazione sempre vera"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-qsat-leq-sat-implica-npconp",
+    "appelli": [
+      "Simulazione d'Esame 2"
+    ],
+    "ipotesi": "",
+    "testo": "Se QSAT si riduce in tempo polinomiale a SAT allora co-NP = NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "QSAT è PSPACE-completo. Se QSAT ≤ SAT allora ogni problema di PSPACE si riduce a SAT (componendo le riduzioni), quindi PSPACE ⊆ NP e con NP ⊆ PSPACE si ottiene NP = PSPACE. Ma PSPACE è chiusa per complemento, dunque co-NP ⊆ co-PSPACE = PSPACE = NP, e per complementazione NP = co-NP.",
+    "chiavi": [
+      "QSAT PSPACE-completo",
+      "composizione di riduzioni",
+      "PSPACE ⊆ NP",
+      "PSPACE chiusa per complemento",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "spazio",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-pnp-implica-npspace-non-poly",
+    "appelli": [
+      "15 Luglio 2019"
+    ],
+    "ipotesi": "",
+    "testo": "Se P ≠ NP, allora nessun problema in NPSPACE può essere risolto in tempo polinomiale.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Per il teorema di Savitch NPSPACE = PSPACE, e vale P ⊆ PSPACE. Quindi NPSPACE contiene tutti i problemi di P, che per definizione si risolvono in tempo polinomiale: per esempio la raggiungibilità in un grafo. Basta questo controesempio, e l'affermazione è falsa indipendentemente da P ≠ NP.",
+    "chiavi": [
+      "teorema di Savitch",
+      "NPSPACE = PSPACE",
+      "P ⊆ PSPACE",
+      "controesempio: la raggiungibilità"
+    ],
+    "argomenti": [
+      "spazio",
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-2sat-riducibile-a-sat",
+    "appelli": [
+      "15 Luglio 2019",
+      "Simulazione d'Esame 2"
+    ],
+    "ipotesi": "",
+    "testo": "2-SAT è riducibile in tempo polinomiale al problema SAT.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Banalmente vero: una formula 2-CNF è già una formula CNF, quindi la funzione identità è una riduzione polinomiale valida (mappa istanze yes in istanze yes e istanze no in istanze no). In alternativa: 2-SAT ∈ P ⊆ NP e SAT è NP-completo, quindi ogni problema di NP — 2-SAT incluso — si riduce a SAT. Attenzione a non confondersi con il verso difficile, SAT ≤ 2-SAT, che invece implicherebbe P = NP.",
+    "chiavi": [
+      "2-CNF è già CNF",
+      "riduzione identità",
+      "SAT NP-completo",
+      "attenzione al verso"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-mincol-11-10",
+    "appelli": [
+      "15 Luglio 2019",
+      "Simulazione d'Esame 2"
+    ],
+    "ipotesi": "",
+    "testo": "Non esiste alcun algoritmo polinomiale che garantisce approssimazione 11/10 per il problema di trovare il minimo numero di colori per colorare propriamente i vertici di un grafo.",
+    "risposta": "IRRISOLTA",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Qui NON è data alcuna ipotesi, e questo cambia tutto. Il teorema del gap dice che se P ≠ NP allora nessuna approssimazione r < 4/3 è possibile per Min Colouring (distinguerebbe i grafi 3-colorabili da quelli che richiedono ≥ 4 colori, e 3-Colouring è NP-completo); siccome 11/10 < 4/3, sotto P ≠ NP l'affermazione sarebbe vera. Ma se invece P = NP il problema si risolve esattamente in polytime e un tale algoritmo esiste, rendendola falsa. L'affermazione è quindi esattamente tanto aperta quanto P vs NP: irrisolta.",
+    "chiavi": [
+      "nessuna ipotesi data",
+      "teorema del gap",
+      "approssimazione r < 4/3",
+      "3-Colouring NP-completo",
+      "aperta quanto P vs NP"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-exp-nexp-2nk",
+    "appelli": [
+      "15 Luglio 2019",
+      "Simulazione d'Esame 2"
+    ],
+    "ipotesi": "",
+    "testo": "⋃_{k>0} TIME(2^(nᵏ)) ≠ ⋃_{k>0} NTIME(2^(nᵏ))",
+    "risposta": "IRRISOLTA",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "Le due unioni sono EXP e NEXP. La questione EXP vs NEXP è aperta esattamente come P vs NP. Con la tecnica del padding si dimostra che P = NP ⟹ EXP = NEXP, ma non il viceversa, e non è noto se le due classi differiscano. Nessuna ipotesi qui la decide.",
+    "chiavi": [
+      "EXP e NEXP",
+      "padding",
+      "P = NP ⟹ EXP = NEXP",
+      "viceversa non noto",
+      "questione aperta"
+    ],
+    "argomenti": [
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-space-logn-in-np",
+    "appelli": [
+      "Simulazione d'Esame 2"
+    ],
+    "ipotesi": "",
+    "testo": "SPACE(log n) ⊆ NP",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "SPACE(log n) = L. Una macchina deterministica che usa O(log n) bit di memoria di lavoro ha 2^O(log n) = poly(n) configurazioni distinte; se non termina entro quel numero di passi ripete una configurazione ed entra in loop, quindi una macchina che termina lo fa in tempo polinomiale. Dunque L ⊆ P, e siccome P ⊆ NP si conclude L ⊆ NP.",
+    "chiavi": [
+      "L = SPACE(log n)",
+      "poly(n) configurazioni",
+      "ripetere una configurazione = loop",
+      "L ⊆ P ⊆ NP"
+    ],
+    "argomenti": [
+      "spazio",
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-apx-incluso-ptas",
+    "appelli": [
+      "Simulazione d'Esame 2"
+    ],
+    "ipotesi": "",
+    "testo": "APX ⊆ PTAS",
+    "risposta": "IRRISOLTA",
+    "opzioni": [
+      "VERO",
+      "FALSO",
+      "IRRISOLTA"
+    ],
+    "spiegazione": "L'inclusione PTAS ⊆ APX vale sempre (fissando un ε qualunque, un PTAS dà un'approssimazione costante), quindi APX ⊆ PTAS equivale ad APX = PTAS. Ma APX = PTAS è vera se P = NP (collassa tutto su P) e falsa se P ≠ NP (per il gap su Vertex Cover). Senza ipotesi la domanda è quindi aperta quanto P vs NP: irrisolta. Da confrontare con l'appello del 3 Febbraio 2023, dove la stessa questione è posta SOTTO l'ipotesi co-NP ≠ NP e la risposta diventa determinata.",
+    "chiavi": [
+      "PTAS ⊆ APX sempre",
+      "APX ⊆ PTAS equivale ad APX = PTAS",
+      "equivale a P vs NP",
+      "confronto con l'appello con ipotesi"
+    ],
+    "argomenti": [
+      "approssimazione"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-logspace-red-implica-npc",
+    "appelli": [
+      "Midterm 1 2015-16"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Se A è NP-completo ed esiste una riduzione log-space da A a B allora B è NP-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La riduzione dà solo la NP-hardness di B: ogni problema di NP si riduce ad A e quindi, per transitività, a B. Ma la NP-completezza richiede ANCHE l'appartenenza B ∈ NP, che l'enunciato non assume. Senza di essa B potrebbe essere per esempio PSPACE-completo, o addirittura indecidibile: SAT si riduce a QSAT, ma QSAT non è NP-completo (a meno che NP = PSPACE).",
+    "chiavi": [
+      "solo NP-hardness",
+      "l'appartenenza B ∈ NP",
+      "la NP-completezza richiede B ∈ NP",
+      "QSAT non è NP-completo"
+    ],
+    "argomenti": [
+      "completezza",
+      "riduzioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-riduzione-conserva-esponente",
+    "appelli": [
+      "Midterm 1 2015-16"
+    ],
+    "ipotesi": "Assumendo NP ≠ co-NP",
+    "testo": "Siano A, B due problemi decisionali, k > 1 una costante ed f una funzione che trasforma istanze di A in istanze di B tale che |f(x)| = O(|x|^k) per ogni x. Se B ∈ TIME(n^k) allora A ∈ TIME(n^k).",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "L'esponente non si conserva nella composizione. Su un input x di taglia n l'istanza trasformata ha taglia O(n^k), quindi risolvere B su di essa costa O((n^k)^k) = O(n^(k²)), non O(n^k). Si conclude A ∈ TIME(n^(k²)), un bound più debole. In più l'enunciato non limita nemmeno il costo di calcolare f, che va sommato. La riduzione conserva la polinomialità, non il grado del polinomio.",
+    "chiavi": [
+      "composizione",
+      "(n^k)^k = n^(k²)",
+      "costo di calcolare f non limitato",
+      "si conserva la polinomialità non il grado"
+    ],
+    "argomenti": [
+      "riduzioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-3sat-non-leq-2sat",
+    "appelli": [
+      "Prova in Itinere 1, 2014-15"
+    ],
+    "ipotesi": "",
+    "testo": "Se P ≠ co-NP allora 3-SAT ≰ 2-SAT (non può esistere una riduzione da 3-SAT a 2-SAT).",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Si prova la contronominale. Sappiamo che 2-SAT ∈ P e che 3-SAT è NP-completo. Se valesse 3-SAT ≤ 2-SAT allora 3-SAT ∈ P e quindi NP = P; da qui, complementando, co-NP = co-P = P. Il che mostra che se co-NP ≠ P non può valere 3-SAT ≤ 2-SAT.",
+    "chiavi": [
+      "contronominale",
+      "2-SAT ∈ P",
+      "3-SAT NP-completo",
+      "NP = P",
+      "co-P = P"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "ufficiale"
+  },
+  {
+    "id": "vf-algoritmo-nd-per-tautologia",
+    "appelli": [
+      "Prova in Itinere 1, 2014-15"
+    ],
+    "ipotesi": "",
+    "testo": "Il seguente algoritmo non deterministico risolve correttamente Tautologia: usando l'istruzione goto both si creano tutti gli assegnamenti per la formula φ; ogni ramo di computazione verifica se l'assegnamento creato soddisfa φ e in tal caso dà in output SI e termina, altrimenti termina senza fornire output.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "L'algoritmo proposto risponde SI se ESISTE almeno un assegnamento che soddisfa la formula, mentre un'istanza di Tautologia è SI se e solo se OGNI assegnamento la soddisfa. L'algoritmo descritto risolve dunque SAT, non Tautologia. Il punto profondo è l'asimmetria del non determinismo: la risposta complessiva di una macchina non deterministica è l'OR dei suoi rami, mentre per Tautologia servirebbe un AND. È esattamente per questo che non si riesce a dimostrare NP = co-NP con questa strategia.",
+    "chiavi": [
+      "esiste almeno uno, non ogni",
+      "risolve SAT non Tautologia",
+      "risposta = OR dei rami",
+      "servirebbe un AND",
+      "asimmetria del non determinismo"
+    ],
+    "argomenti": [
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "ufficiale"
+  },
+  {
+    "id": "vf-notriangle-in-nl",
+    "appelli": [
+      "Midterm 1 2015-16"
+    ],
+    "ipotesi": "Assumendo L ≠ NL",
+    "testo": "Il problema No-Triangle (dato un grafo non orientato G, yes se e solo se G non contiene tre vertici a due a due adiacenti) è in NL.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "No-Triangle è addirittura in L, e L ⊆ NL. Per deciderlo bastano tre contatori i, j, k da log n bit ciascuno con cui enumerare tutte le O(n³) triple di vertici; per ogni tripla si controlla se i tre archi sono presenti, e se lo sono si risponde no. Lo spazio di lavoro complessivo è O(log n), quindi No-Triangle ∈ L ⊆ NL.",
+    "chiavi": [
+      "tre contatori da log n bit",
+      "enumerare le triple",
+      "spazio O(log n)",
+      "L ⊆ NL"
+    ],
+    "argomenti": [
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-notriangle-nl-completo",
+    "appelli": [
+      "Midterm 1 2015-16"
+    ],
+    "ipotesi": "Assumendo L ≠ NL",
+    "testo": "Il problema No-Triangle è NL-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "No-Triangle ∈ L (bastano tre contatori da log n bit per enumerare le triple di vertici). Se fosse NL-completo, ogni problema di NL si ridurrebbe in log-space a un problema di L e quindi starebbe in L, dando L = NL, contro l'ipotesi.",
+    "chiavi": [
+      "No-Triangle ∈ L",
+      "ogni problema di NL starebbe in L",
+      "L = NL",
+      "contro l'ipotesi"
+    ],
+    "argomenti": [
+      "spazio",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-2psat-sigma2-implica-pi3-ph",
+    "appelli": [
+      "5 Luglio 2017"
+    ],
+    "ipotesi": "",
+    "testo": "Se il problema 2P-SAT appartiene alla classe Σ₂P allora Π₃P = PH.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "2P-SAT è PSPACE-completo. Se 2P-SAT ∈ Σ₂P allora ogni problema di PSPACE si riduce a esso e, per chiusura di Σ₂P rispetto alle riduzioni polinomiali, PSPACE ⊆ Σ₂P. Siccome PH ⊆ PSPACE si ottiene PH ⊆ Σ₂P, e insieme all'inclusione ovvia Σ₂P ⊆ PH si conclude PH = Σ₂P: la gerarchia polinomiale collassa al secondo livello. Allora Π₃P ⊆ PH = Σ₂P ⊆ Π₃P, quindi Π₃P = PH.",
+    "chiavi": [
+      "2P-SAT PSPACE-completo",
+      "PSPACE ⊆ Σ₂P",
+      "PH ⊆ PSPACE",
+      "collasso PH = Σ₂P",
+      "Π₃P ⊆ PH ⊆ Π₃P"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "completezza",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  }
+]

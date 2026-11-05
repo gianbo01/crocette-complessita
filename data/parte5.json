@@ -1,0 +1,674 @@
+[
+  {
+    "id": "vf-indset-due-terzi-implica-vc-meta",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se un grafo non diretto G con n vertici ha un INDEPENDENT SET di taglia (2/3)n allora G ha un VERTEX COVER di taglia n/2.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Si usa la proprietà fondamentale: S è un Independent Set se e solo se V  S è un Vertex Cover. Se |S| = (2/3)n allora il complementare ha taglia |V  S| = n − (2/3)n = (1/3)n, quindi G possiede un Vertex Cover di taglia n/3. Siccome nella definizione del corso il parametro k di VERTEX COVER significa |C| ≤ k, e vale n/3 ≤ n/2, G è certamente un istanza YES di Vertex Cover con parametro n/2. Da scrivere all esame: il complementare di un Independent Set è un Vertex Cover; se l Independent Set ha taglia 2n/3 il Vertex Cover complementare ha taglia n/3 ≤ n/2, quindi esiste un Vertex Cover di taglia al più n/2.",
+    "chiavi": [
+      "S Independent Set se e solo se V  S è Vertex Cover",
+      "n − (2/3)n = (1/3)n",
+      "Vertex Cover di taglia n/3",
+      "il parametro k significa |C| ≤ k",
+      "n/3 ≤ n/2"
+    ],
+    "argomenti": [
+      "problemi-specifici"
+    ],
+    "fonte": "derivata",
+    "nota": "Il file di origine risponde FALSO: calcola correttamente n/3 e poi conclude «e non n/2». Il conto è giusto, la conclusione no, perché il parametro di VERTEX COVER è un limite superiore. Anche leggendo «taglia n/2» come esattamente n/2 l affermazione resta vera, perché un sovrainsieme di un vertex cover è ancora un vertex cover: bastano n/6 vertici in più."
+  },
+  {
+    "id": "vf-approx-due-terzi-indset-vc",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se esiste un algoritmo di 2/3-approssimazione per MAXIMUM INDEPENDENT SET allora esiste anche un algoritmo di 2/3-approssimazione per MINIMUM VERTEX COVER.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La complementarità lega le soluzioni OTTIME dei due problemi (un insieme è vertex cover se e solo se il suo complemento è independent set) ma non trasferisce il FATTORE di approssimazione. Il motivo è che la differenza n − k è additiva mentre il rapporto di approssimazione è moltiplicativo: se l'ottimo di Vertex Cover è piccolo, un independent set che vale 2/3 dell'ottimo lascia un vertex cover il cui rapporto rispetto a OPT può degradare arbitrariamente. Il fatto decisivo è che Vertex Cover sta in APX mentre Independent Set non ammette alcuna approssimazione con fattore costante se P ≠ NP: se il trasferimento funzionasse, le due cose sarebbero incompatibili.",
+    "chiavi": [
+      "complementarità lega solo gli ottimi",
+      "differenza additiva, rapporto moltiplicativo",
+      "Vertex Cover in APX",
+      "Independent Set non ammette fattore costante"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata",
+    "nota": "Attenzione: per un problema di minimo un fattore 2/3 < 1 significherebbe battere l'ottimo, impossibile per definizione. Con quella lettura la conclusione è falsa a prescindere, e l'affermazione resta FALSO."
+  },
+  {
+    "id": "vf-conp-pspace-implica-2psat-non-leq-sat",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se co-NP ≠ PSPACE allora 2-PLAYER SAT ≰ SAT.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "2-Player SAT è PSPACE-completo. Se si riducesse a SAT, che è NP-completo, allora ogni problema di PSPACE si ridurrebbe a SAT per transitività, quindi PSPACE ⊆ NP e, con NP ⊆ PSPACE, PSPACE = NP. Siccome PSPACE è chiusa per complemento, da PSPACE = NP segue PSPACE = co-PSPACE = co-NP. La premessa co-NP ≠ PSPACE esclude proprio questo, quindi la riduzione non può esistere.",
+    "chiavi": [
+      "2-Player SAT PSPACE-completo",
+      "transitività",
+      "PSPACE ⊆ NP",
+      "PSPACE chiusa per complemento",
+      "PSPACE = co-NP"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "spazio",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-ptas-apx-implica-npspace-p",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se PTAS ≠ APX allora NPSPACE ≠ P.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "PTAS ≠ APX implica P ≠ NP: con P = NP ogni problema di ottimizzazione in NP si risolve esattamente in polytime e tutte le classi di approssimazione collassano, P = FPTAS = PTAS = APX. Da P ≠ NP e dalla catena P ⊆ NP ⊆ PSPACE segue P ≠ PSPACE, perché se P fosse uguale a PSPACE collasserebbe anche NP. Infine, per il teorema di Savitch PSPACE = NPSPACE, quindi P ≠ NPSPACE.",
+    "chiavi": [
+      "P ≠ NP",
+      "P = FPTAS = PTAS = APX",
+      "P ⊆ NP ⊆ PSPACE",
+      "teorema di Savitch",
+      "PSPACE = NPSPACE"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "spazio",
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-and-di-due-pspace-meno-p",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se P ≠ NP allora per ogni coppia di problemi A, B ∈ PSPACE/P il problema C = A ∧ B non è in P (un'istanza di C è yes se e solo se è yes sia per A che per B).",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "L'intersezione di due problemi difficili può risultare banale. Si prenda A ∈ PSPACE \\ P e si ponga B = Ā: anche B sta in PSPACE \\ P, perché sia PSPACE sia P sono chiuse per complemento. Nessuna istanza può essere yes contemporaneamente per A e per il suo complemento, quindi C risponde sempre no e si risolve in tempo costante: C ∈ P. Basta questo controesempio.",
+    "chiavi": [
+      "intersezione banale",
+      "B = complemento di A",
+      "PSPACE e P chiuse per complemento",
+      "C risponde sempre no",
+      "C ∈ P"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-selfreducible-implica-npc",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se A è SELF-REDUCIBLE allora A è NP-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Il primo teorema sulla self-reducibility dice che ogni problema NP-completo è self-reducible, ma non vale il viceversa. La self-reducibility è una proprietà STRUTTURALE — poter ricostruire la soluzione interrogando il problema di decisione su istanze più piccole — non una misura di difficoltà: sono self-reducible anche problemi facili. Graph Isomorphism è self-reducible senza che si ritenga NP-completo, e lo sono parecchi problemi che stanno in P.",
+    "chiavi": [
+      "primo teorema sulla self-reducibility",
+      "non vale il viceversa",
+      "proprietà strutturale",
+      "Graph Isomorphism",
+      "anche problemi in P"
+    ],
+    "argomenti": [
+      "self-reducibility",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-tutti-selfreducible-implica-p-intersez",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se tutti i problemi in NP sono SELF-REDUCIBLE allora P = NP ∧ co-NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La tesi da provare è P = NP ∩ co-NP. È la contronominale del secondo teorema sulla self-reducibility, che afferma: se (NP ∩ co-NP) \\ P ≠ ∅ allora esiste un problema in NP che NON è self-reducible. Sotto l'ipotesi che tutti i problemi di NP siano self-reducible, quell'insieme differenza deve essere vuoto, cioè NP ∩ co-NP ⊆ P. Siccome vale sempre l'inclusione opposta P ⊆ NP ∩ co-NP, l'unica conclusione è l'uguaglianza P = NP ∩ co-NP.",
+    "chiavi": [
+      "secondo teorema sulla self-reducibility",
+      "contronominale",
+      "insieme differenza vuoto",
+      "P ⊆ NP ∩ co-NP"
+    ],
+    "argomenti": [
+      "self-reducibility",
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata",
+    "nota": "Nel testo d'esame il simbolo è ∧ e non ∩: va letto come intersezione fra le due classi, non come congiunzione logica. La tesi è P = NP ∩ co-NP."
+  },
+  {
+    "id": "vf-max3sat-2approx-implica-vc-98",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se P ≠ NP ed esiste un algoritmo di 2-approssimazione per MAX-3-SAT allora esiste un algoritmo di 9/8-approssimazione per VERTEX COVER.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La premessa è vera: per Max-3-SAT esiste un'approssimazione 8/7, ottenuta già dall'assegnamento casuale che soddisfa in media 7/8 delle clausole, e 8/7 soddisfa a maggior ragione la richiesta di una 2-approssimazione. La conclusione invece è impossibile: per il teorema del gap, Minimum Vertex Cover non ammette approssimazione con r < 7/6 se P ≠ NP, e 9/8 = 1,125 è strettamente minore di 7/6 ≈ 1,167. Premessa vera e conclusione falsa: l'implicazione è falsa.",
+    "chiavi": [
+      "Max-3-SAT ammette 8/7",
+      "assegnamento casuale",
+      "teorema del gap",
+      "Vertex Cover r < 7/6",
+      "9/8 < 7/6",
+      "premessa vera conclusione falsa"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata",
+    "nota": "Nel file di origine il problema è scritto «MAX-3-SAR»: si tratta di MAX-3-SAT."
+  },
+  {
+    "id": "vf-qsat-npc-implica-vc-intersez",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se QUANTIFIED SAT è NP-completo allora VERTEX COVER ∈ co-NP ∧ NP.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La tesi è Vertex Cover ∈ co-NP ∩ NP. QSAT è PSPACE-completo; se fosse anche NP-completo starebbe in NP, e allora ogni problema di PSPACE si ridurrebbe a un problema di NP, dando PSPACE ⊆ NP e, con NP ⊆ PSPACE, PSPACE = NP. Siccome PSPACE è chiusa per complemento, co-NP = co-PSPACE = PSPACE = NP. Vertex Cover è NP-completo, quindi sta in NP; con NP = co-NP sta anche in co-NP, cioè nell'intersezione.",
+    "chiavi": [
+      "QSAT PSPACE-completo",
+      "PSPACE ⊆ NP",
+      "PSPACE chiusa per complemento",
+      "NP = co-NP",
+      "Vertex Cover in NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "derivata",
+    "nota": "Nel testo d'esame il simbolo è ∧ e non ∩: «co-NP ∧ NP» va letto come l'intersezione delle due classi."
+  },
+  {
+    "id": "vf-qsat-leq-a-implica-compl-pspacec",
+    "appelli": [
+      "6 Luglio 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se QUANTIFIED SAT ≤ A allora Ā è PSPACE-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La riduzione da QSAT, che è PSPACE-completo, dà per transitività soltanto che A è PSPACE-hard; e poiché X ≤ Y ⟺ X̄ ≤ Ȳ, anche Ā è PSPACE-hard. Ma «completo per una classe» richiede ANCHE l'appartenenza a quella classe, e l'enunciato non assume A ∈ PSPACE: A potrebbe stare in EXPTIME o più in alto, o essere indecidibile. Si conclude quindi PSPACE-hard, non PSPACE-completo.",
+    "chiavi": [
+      "solo PSPACE-hard",
+      "transitività",
+      "X ≤ Y ⟺ X̄ ≤ Ȳ",
+      "completo richiede appartenenza",
+      "potrebbe stare in EXPTIME"
+    ],
+    "argomenti": [
+      "completezza",
+      "riduzioni",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-npconp-implica-smallfactor-npc",
+    "appelli": [
+      "6 Luglio 2026",
+      "7 Luglio 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se NP ≠ co-NP allora SMALL FACTOR è NP-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Vale esattamente il ragionamento opposto. Small Factor ∈ NP ∩ co-NP: è certificabile sia sulle istanze yes (un fattore primo minore di k) sia su quelle no (la fattorizzazione completa del numero). Se fosse NP-completo, ogni problema di NP si ridurrebbe a un problema che sta in co-NP e, per chiusura all'indietro di co-NP rispetto alle riduzioni di Karp, si otterrebbe NP ⊆ co-NP e quindi NP = co-NP. Sotto l'ipotesi NP ≠ co-NP la completezza è preclusa.",
+    "chiavi": [
+      "NP ∩ co-NP",
+      "certificabile sulle istanze no",
+      "fattorizzazione completa",
+      "co-NP chiusa per riduzioni",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "co-NP",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-approx-vc-implica-approx-indset",
+    "appelli": [
+      "7 Luglio 2025",
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se per un α > 0 esiste un algoritmo di α-approssimazione per MINIMUM VERTEX COVER allora esiste anche un algoritmo di α-approssimazione per MAXIMUM INDEPENDENT SET.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Le soluzioni OTTIME dei due problemi sono complementari — un insieme è vertex cover se e solo se il suo complemento è independent set — ma il FATTORE di approssimazione non si trasferisce, perché la complementarità è additiva (taglia n − k) mentre il rapporto di approssimazione è moltiplicativo. Se OPT del vertex cover è vicino a n, un vertex cover α volte peggiore lascia un independent set minuscolo, con rapporto arbitrariamente scadente. La prova decisiva: Vertex Cover sta in APX grazie alla 2-approssimazione dal matching massimale, mentre Independent Set non ammette alcuna approssimazione con fattore costante se P ≠ NP.",
+    "chiavi": [
+      "soluzioni ottime complementari",
+      "complementarità additiva, rapporto moltiplicativo",
+      "Vertex Cover in APX",
+      "matching massimale",
+      "Independent Set non ammette fattore costante"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-approx-clique-implica-approx-indset",
+    "appelli": [
+      "7 Luglio 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se per un α > 0 esiste un algoritmo di α-approssimazione per MAXIMUM CLIQUE allora esiste anche un algoritmo di α-approssimazione per MAXIMUM INDEPENDENT SET.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Cercare una clique in G è esattamente cercare un independent set nel grafo complemento Ḡ: un insieme di vertici è clique in G se e solo se è independent set in Ḡ. La trasformazione G ↦ Ḡ è polinomiale e conserva le taglie di TUTTI gli insiemi, ottimi compresi, quindi il fattore α si conserva esattamente. Nota il contrasto con la coppia Vertex Cover / Independent Set: là i due problemi sono uno di minimo e uno di massimo e il legame è additivo, qui sono entrambi di massimo e la corrispondenza fra soluzioni è biunivoca.",
+    "chiavi": [
+      "clique in G è independent set in Ḡ",
+      "trasformazione polinomiale",
+      "conserva le taglie",
+      "entrambi problemi di massimo",
+      "corrispondenza biunivoca"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "riduzioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-vc-87-implica-fptas",
+    "appelli": [
+      "7 Luglio 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se esiste un algoritmo di 8/7-approssimazione per MINIMUM VERTEX COVER allora MINIMUM VERTEX COVER ∈ FPTAS.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Per il teorema del gap, Minimum Vertex Cover non ammette approssimazione con r < 7/6 se P ≠ NP. Siccome 8/7 ≈ 1,143 è strettamente minore di 7/6 ≈ 1,167, l'esistenza di un tale algoritmo forza P = NP. Con P = NP la soluzione ottima si calcola esattamente in tempo polinomiale, cioè con rapporto r = 1 per ogni ε e in tempo polinomiale anche in 1/ε: Vertex Cover cade dunque in FPTAS (e in PTAS, e in P).",
+    "chiavi": [
+      "teorema del gap",
+      "r < 7/6",
+      "8/7 < 7/6",
+      "P = NP",
+      "rapporto r = 1",
+      "tempo polinomiale anche in 1/ε"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-sat-non-leq-2sat-implica-tau-non-leq-clique",
+    "appelli": [
+      "7 Luglio 2025"
+    ],
+    "ipotesi": "",
+    "testo": "SAT ≰ 2-SAT ⟹ TAUTOLOGY ≰ CLIQUE",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Bisogna tradurre premessa e conclusione. La premessa SAT ≰ 2-SAT equivale a P ≠ NP: 2-SAT sta in P e SAT è NP-completo, quindi quella riduzione esiste se e solo se P = NP. La conclusione TAU ≰ CLIQUE equivale a NP ≠ co-NP: TAU è co-NP-completo e Clique è NP-completo, quindi la riduzione esiste se e solo se co-NP ⊆ NP. Ma da P ≠ NP non segue NP ≠ co-NP: sono due questioni aperte indipendenti, ed è coerente uno scenario con P ≠ NP e NP = co-NP. La premessa può valere senza la conclusione, quindi l'implicazione non è dimostrabile.",
+    "chiavi": [
+      "premessa equivale a P ≠ NP",
+      "2-SAT sta in P",
+      "conclusione equivale a NP ≠ co-NP",
+      "TAU co-NP-completo",
+      "questioni aperte indipendenti"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-apx-fptas-sse-p-conp",
+    "appelli": [
+      "7 Luglio 2025",
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "APX ≠ FPTAS se e solo se P ≠ co-NP",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Due direzioni. (⟸) Se P ≠ co-NP allora P ≠ NP, perché da P = NP seguirebbe co-NP = co-P = P. Con P ≠ NP le due classi restano separate: Vertex Cover sta in APX grazie alla 2-approssimazione, ma non in FPTAS, perché un FPTAS darebbe approssimazioni arbitrariamente vicine a 1, sotto la soglia 7/6 imposta dal teorema del gap. (⟹) Contronominale: se P = co-NP allora P = NP, ogni problema di ottimizzazione in NP si risolve esattamente in polytime e tutte le classi collassano, P = FPTAS = PTAS = APX, cioè APX = FPTAS.",
+    "chiavi": [
+      "P = co-NP dà P = NP",
+      "co-P = P",
+      "Vertex Cover in APX non in FPTAS",
+      "soglia 7/6 del gap",
+      "P = FPTAS = PTAS = APX"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-eulpath-non-npc-implica-p-apx",
+    "appelli": [
+      "7 Luglio 2025"
+    ],
+    "ipotesi": "Assumendo P ≠ NP",
+    "testo": "Se il problema di decisione EULERIAN PATH non è NP-completo allora P = APX.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Eulerian Path sta in P, per il criterio di Eulero sui gradi dei vertici più la connessione. Sotto l'ipotesi P ≠ NP esso effettivamente NON è NP-completo, quindi la premessa dell'implicazione è vera. Ma nello stesso scenario la conclusione è falsa: APX contiene problemi NP-hard come Vertex Cover e il TSP metrico, che con P ≠ NP non si risolvono esattamente in tempo polinomiale, quindi P ≠ APX. Premessa vera e conclusione falsa: l'implicazione è falsa.",
+    "chiavi": [
+      "Eulerian Path sta in P",
+      "criterio di Eulero",
+      "APX contiene problemi NP-hard",
+      "TSP metrico",
+      "premessa vera conclusione falsa"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-qsat-leq-a-implica-compl-conpc",
+    "appelli": [
+      "7 Luglio 2025"
+    ],
+    "ipotesi": "",
+    "testo": "Se QUANTIFIED SAT ≤ A allora Ā è co-NP-completo.",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La riduzione da QSAT, che è PSPACE-completo, dà per transitività soltanto che A è PSPACE-hard, e poiché X ≤ Y ⟺ X̄ ≤ Ȳ anche Ā è PSPACE-hard. Essere co-NP-completo richiede però l'APPARTENENZA a co-NP, che non è assunta da nessuna parte. Anzi: un problema PSPACE-hard che stesse in co-NP forzerebbe PSPACE ⊆ co-NP e quindi NP = co-NP = PSPACE, un collasso che non si può dedurre dalla sola riduzione.",
+    "chiavi": [
+      "solo PSPACE-hard",
+      "X ≤ Y ⟺ X̄ ≤ Ȳ",
+      "richiede l'appartenenza a co-NP",
+      "PSPACE ⊆ co-NP",
+      "NP = co-NP = PSPACE"
+    ],
+    "argomenti": [
+      "completezza",
+      "riduzioni",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-2psat-conp-implica-leq-vc",
+    "appelli": [
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se 2-PLAYER SAT ∈ co-NP allora 2-PLAYER SAT ≤ VERTEX COVER.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "2-Player SAT è PSPACE-completo. Se stesse in co-NP, ogni problema di PSPACE si ridurrebbe a un problema di co-NP e starebbe in co-NP per chiusura: PSPACE ⊆ co-NP, dunque PSPACE = co-NP. Con NP ⊆ PSPACE segue NP ⊆ co-NP e quindi NP = co-NP = PSPACE. In quello scenario 2-Player SAT appartiene a NP, e Vertex Cover è NP-completo, quindi ogni problema di NP si riduce a esso in tempo polinomiale.",
+    "chiavi": [
+      "2-Player SAT PSPACE-completo",
+      "PSPACE ⊆ co-NP",
+      "NP = co-NP = PSPACE",
+      "Vertex Cover NP-completo"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-approx-alfa-clique-indset-vertici",
+    "appelli": [
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Sia V l'insieme dei vertici del grafo. Se per una funzione α esiste un algoritmo che su ogni grafo ritorna in tempo polinomiale una clique di taglia non minore di α(|V|) volte la clique di taglia massima, allora esiste anche un algoritmo polinomiale che su ogni grafo ritorna un independent set di taglia non minore di α(|V|) volte il massimo independent set.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Un insieme di vertici è clique in G se e solo se è independent set nel grafo complemento Ḡ. L'algoritmo per Independent Set su G si costruisce così: calcola Ḡ, esegue su di esso l'algoritmo per Clique e restituisce l'insieme trovato. La costruzione di Ḡ è polinomiale, quindi il tutto resta polinomiale, e soprattutto |V| non cambia passando al complemento: il fattore α(|V|) è dunque esattamente lo stesso. Qui è essenziale che α dipenda solo dal numero di vertici, quantità che la complementazione conserva.",
+    "chiavi": [
+      "clique in G è independent set in Ḡ",
+      "calcola il complemento",
+      "costruzione polinomiale",
+      "|V| non cambia",
+      "α dipende solo dal numero di vertici"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "riduzioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata",
+    "nota": "Nel file di origine l'enunciato ha «su ogni grado» per «su ogni grafo» e la definizione di V incollata in coda; qui è riportata all'inizio."
+  },
+  {
+    "id": "vf-vc-fptas-implica-max3sat-10099",
+    "appelli": [
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se MINIMUM VERTEX COVER ∈ FPTAS allora esiste un algoritmo di 100/99-approssimazione per MAX-3-SAT.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Per il teorema del gap Minimum Vertex Cover non ammette approssimazione con r < 7/6 se P ≠ NP, quindi non può stare in FPTAS, che garantirebbe 1 + ε per ogni ε. Se Vertex Cover ∈ FPTAS allora P = NP, e con P = NP ogni problema di ottimizzazione in NP — Max-3-SAT compreso — si risolve esattamente in tempo polinomiale. La soluzione esatta ha rapporto 1, che soddisfa ampiamente la richiesta di una 100/99-approssimazione perché 1 ≤ 100/99.",
+    "chiavi": [
+      "teorema del gap",
+      "r < 7/6",
+      "FPTAS garantirebbe 1 + ε",
+      "P = NP",
+      "rapporto 1 ≤ 100/99"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata",
+    "nota": "Nel file di origine il problema è scritto «MINIMUN VERTX COVER»."
+  },
+  {
+    "id": "vf-insieme-istanze-su-cui-tutti-sbagliano",
+    "appelli": [
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se P ≠ NP allora per ogni problema A nella classe NP esiste un insieme non vuoto di istanze X di A tale che, per ogni algoritmo polinomiale Π e per ogni x ∈ X, la risposta di Π su x è scorretta, ovvero A(x) ≠ Π(x).",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Due motivi, entrambi sufficienti. Primo: l'enunciato quantifica su OGNI problema di NP, e P ⊆ NP; per A ∈ P esiste un algoritmo polinomiale corretto su tutte le istanze, quindi nessun X non vuoto può avere quella proprietà. Secondo, e più profondo: anche restringendosi ai problemi NP-hard, chiedere istanze su cui sbagliano TUTTI gli algoritmi contemporaneamente è impossibile, perché per ogni istanza fissata esiste l'algoritmo di tempo costante con la risposta cablata nel codice.",
+    "chiavi": [
+      "P ⊆ NP",
+      "per A ∈ P esiste un algoritmo corretto",
+      "quantifica su ogni problema di NP",
+      "risposta cablata nel codice",
+      "tempo costante"
+    ],
+    "argomenti": [
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata",
+    "nota": "Nel file di origine l'insieme X non è dichiarato non vuoto: preso alla lettera, un X vuoto renderebbe l'affermazione vera per vacuità. Qui è stato reso esplicito il «non vuoto», che è la lettura intesa."
+  },
+  {
+    "id": "vf-vc-non-conp-implica-qsat-non-conpc",
+    "appelli": [
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se VERTEX COVER ∉ co-NP allora QUANTIFIED SAT non è co-NP-completo.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Si procede per modus tollens sulla contronominale. Se QSAT fosse co-NP-completo, siccome è PSPACE-completo ogni problema di PSPACE si ridurrebbe a un problema di co-NP e si otterrebbe PSPACE ⊆ co-NP, quindi PSPACE = co-NP; con NP ⊆ PSPACE seguirebbe NP ⊆ co-NP e dunque NP = co-NP. Allora Vertex Cover, che sta in NP, starebbe anche in co-NP. La premessa afferma Vertex Cover ∉ co-NP, quindi QSAT non può essere co-NP-completo.",
+    "chiavi": [
+      "modus tollens",
+      "contronominale",
+      "QSAT PSPACE-completo",
+      "PSPACE = co-NP",
+      "NP = co-NP",
+      "Vertex Cover sta in NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-npconp-implica-smallfactor-non-npc",
+    "appelli": [
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "Se NP ≠ co-NP allora SMALL FACTOR non è NP-completo.",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Small Factor ∈ NP ∩ co-NP. Se fosse NP-completo, ogni problema di NP si ridurrebbe a esso; essendo esso anche in co-NP, e co-NP chiusa all'indietro rispetto alle riduzioni di Karp, si otterrebbe NP ⊆ co-NP e quindi NP = co-NP. Sotto l'ipotesi NP ≠ co-NP la completezza è esclusa, quindi l'affermazione è vera. Attenzione a leggere bene il verso: la forma affermativa «Small Factor È NP-completo» sotto la stessa ipotesi è invece falsa.",
+    "chiavi": [
+      "NP ∩ co-NP",
+      "co-NP chiusa per riduzioni",
+      "NP ⊆ co-NP",
+      "NP = co-NP",
+      "attenzione a leggere il verso"
+    ],
+    "argomenti": [
+      "co-NP",
+      "completezza",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-3sat-leq-2sat-implica-ham-leq-eul",
+    "appelli": [
+      "9 Settembre 2026"
+    ],
+    "ipotesi": "",
+    "testo": "3-SAT ≤ 2-SAT ⟹ HAM-CYCLE ≤ EULERIAN CYCLE",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "3-SAT è NP-completo e 2-SAT sta in P: se 3-SAT ≤ 2-SAT allora 3-SAT ∈ P e quindi P = NP. Con P = NP il problema Ham-Cycle, che sta in NP, sta in P: per ridurlo a Eulerian Cycle basta calcolarne la risposta in tempo polinomiale e mappare su un'istanza yes o su un'istanza no fissata di Eulerian Cycle, che sta in P ed è non banale. La premessa rende dunque vera la conclusione, e l'implicazione è vera.",
+    "chiavi": [
+      "3-SAT NP-completo",
+      "2-SAT sta in P",
+      "P = NP",
+      "calcolarne la risposta in tempo polinomiale",
+      "Eulerian Cycle non banale"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  }
+]

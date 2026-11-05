@@ -1,0 +1,722 @@
+[
+  {
+    "id": "vf-indset-due-terzi-implica-vc-meta",
+    "spiegazione": "Si usa la proprietà fondamentale: S è un Independent Set se e solo se V \\ S è un Vertex Cover. Se |S| = (2/3)n, il complementare ha taglia |V \\ S| = n − (2/3)n = (1/3)n, quindi G possiede un Vertex Cover di taglia n/3. Nella definizione del corso il parametro k di VERTEX COVER significa |C| ≤ k, e vale n/3 ≤ n/2: G è quindi un'istanza YES di Vertex Cover con parametro n/2. Da scrivere all'esame: il complementare di un Independent Set è un Vertex Cover; se l'Independent Set ha taglia 2n/3, il Vertex Cover complementare ha taglia n/3 ≤ n/2, quindi esiste un Vertex Cover di taglia al più n/2.",
+    "chiavi": [
+      "S Independent Set se e solo se V \\ S Vertex Cover",
+      "n − (2/3)n = (1/3)n",
+      "Vertex Cover di taglia n/3",
+      "il parametro k significa |C| ≤ k",
+      "n/3 ≤ n/2"
+    ],
+    "nota": "Anche leggendo «taglia n/2» come esattamente n/2 l'affermazione resta vera: un sovrainsieme di un vertex cover è ancora un vertex cover, quindi basta aggiungere n/6 vertici qualsiasi a quello di taglia n/3."
+  },
+  {
+    "id": "vf-tau-leq-2psat-implica-conp-pspace",
+    "ipotesi": "",
+    "spiegazione": "La premessa è vera incondizionatamente e non aggiunge informazione: Two-Player-SAT è PSPACE-completo e TAU ∈ co-NP ⊆ PSPACE, quindi la riduzione TAU ≤ Two-Player-SAT esiste sempre. La conclusione co-NP = PSPACE invece non segue: è una questione aperta, e anzi implicherebbe NP = co-NP, perché da NP ⊆ PSPACE = co-NP si otterrebbe NP ⊆ co-NP. Da una premessa sempre vera non si può derivare una conclusione aperta, quindi l'implicazione è falsa.",
+    "chiavi": [
+      "premessa vera incondizionatamente",
+      "Two-Player-SAT PSPACE-completo",
+      "co-NP ⊆ PSPACE",
+      "questione aperta",
+      "NP = co-NP"
+    ]
+  },
+  {
+    "id": "vf-eulpath-non-npc-implica-p-apx",
+    "ipotesi": "",
+    "spiegazione": "Eulerian Path sta in P, per il criterio di Eulero sui gradi dei vertici più la connessione, ed è non banale. Quindi Eulerian Path è NP-completo se e solo se P = NP, e la premessa «non è NP-completo» equivale a P ≠ NP. La conclusione P = APX invece equivale a P = NP: APX contiene problemi NP-hard come Vertex Cover e il TSP metrico, che con P ≠ NP non si risolvono esattamente in tempo polinomiale, mentre con P = NP tutte le classi collassano. L'affermazione dice dunque «P ≠ NP ⟹ P = NP»: nel mondo P ≠ NP la premessa è vera e la conclusione falsa, e in ogni caso l'implicazione non è derivabile. È falsa.",
+    "chiavi": [
+      "Eulerian Path sta in P",
+      "criterio di Eulero",
+      "premessa equivale a P ≠ NP",
+      "APX contiene problemi NP-hard",
+      "TSP metrico",
+      "non è derivabile"
+    ]
+  },
+  {
+    "id": "vf-max3sat-2approx-implica-vc-98",
+    "nota": null
+  },
+  {
+    "id": "vf-approx-alfa-clique-indset-vertici",
+    "nota": null
+  },
+  {
+    "id": "vf-vc-fptas-implica-max3sat-10099",
+    "nota": null
+  },
+  {
+    "id": "vf-insieme-istanze-su-cui-tutti-sbagliano",
+    "nota": "Preso alla lettera, un insieme X vuoto soddisferebbe la condizione per vacuità; la lettura intesa è quella di un insieme non vuoto di istanze, e con quella l'affermazione è falsa."
+  },
+  {
+    "id": "vf-pnp-implica-alg-per-ogni-np",
+    "chiavi": [
+      "definizione di P = NP",
+      "NP ⊆ P",
+      "algoritmo deterministico in tempo polinomiale"
+    ]
+  },
+  {
+    "id": "vf-sat-non-leq-2sat-implica-tau-non-eulcyc",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La premessa equivale a P ≠ NP: 2-SAT sta in P e SAT è NP-completo, quindi SAT ≤ 2-SAT vale se e solo se P = NP. Si prova la contronominale. Se TAU ≤ EulerianCycle, siccome EulerianCycle sta in P anche TAU sta in P; TAU è co-NP-completo, quindi co-NP ⊆ P, cioè co-NP = P, e complementando NP = co-P = P. Dunque TAU ≤ EulerianCycle implica P = NP, cioè SAT ≤ 2-SAT: la contronominale regge e l'implicazione è vera.",
+    "chiavi": [
+      "premessa equivale a P ≠ NP",
+      "2-SAT sta in P",
+      "contronominale",
+      "EulerianCycle sta in P",
+      "TAU è co-NP-completo",
+      "co-NP = P"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-lowerbound-sat-inverso",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La funzione 1/n^(log n) tende a 0, quindi il lower bound Ω(1/n^(log n)) è banale: qualunque algoritmo, su qualunque problema, impiega almeno un passo, e un passo è già più di 1/n^(log n). La premessa è quindi sempre vera e non dice nulla sulla difficoltà di SAT. Per concludere P ≠ NP servirebbe un lower bound superpolinomiale, cioè che nessun algoritmo per SAT possa girare in tempo polinomiale. Da una premessa banale l'implicazione non si deriva.",
+    "chiavi": [
+      "tende a 0",
+      "lower bound banale",
+      "premessa sempre vera",
+      "lower bound superpolinomiale"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-ogni-algoritmo-sbaglia-a-ogni-taglia",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Qui l'ordine dei quantificatori è ∀A ∀n ∃φ: per ogni algoritmo e per OGNI taglia abbastanza grande deve esistere una formula di quella taglia su cui l'algoritmo sbaglia. P ≠ NP garantisce meno: ogni algoritmo polinomiale sbaglia su infinite formule, ma nulla obbliga gli errori a comparire a ogni taglia. Un algoritmo potrebbe sbagliare solo su taglie molto rade ed essere corretto su tutte le formule di infinite altre taglie; escluderlo richiederebbe di risolvere SAT proprio su quelle taglie, e il padding non basta perché le taglie buone potrebbero essere distanziate in modo esponenziale. L'affermazione non è derivabile da P ≠ NP, quindi è falsa. Da non confondere con la versione ∀n ∃φ ∀A, in cui una sola formula dovrebbe battere tutti gli algoritmi: quella è falsa per un motivo diverso, perché su una formula fissata esiste sempre l'algoritmo con la risposta cablata.",
+    "chiavi": [
+      "ordine dei quantificatori",
+      "sbaglia su infinite formule",
+      "a ogni taglia",
+      "taglie molto rade",
+      "non è derivabile",
+      "risposta cablata"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-ptas-epsilon-05-senza-valore",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Un PTAS con ε = 0,5 garantisce, per un problema di minimizzazione, A(x,ε)/OPT(x) ≤ 1 + ε = 1,5, cioè OPT(x) ≥ A(x,ε)/1,5. Questo lega OPT(x) al valore restituito, ma l'enunciato non fissa nessun valore numerico per A(x,ε): senza quel valore non si può dedurre un bound numerico come OPT(x) ≥ 11. Anche quando il valore è dato — nella versione con A(x,ε) = 15 — il bound corretto è OPT(x) ≥ 15/1,5 = 10, e il caso OPT(x) = 10 è ammesso, quindi OPT(x) ≥ 11 resta non deducibile.",
+    "chiavi": [
+      "1 + ε = 1,5",
+      "OPT(x) ≥ A(x,ε)/1,5",
+      "nessun valore numerico",
+      "OPT(x) ≥ 15/1,5 = 10"
+    ],
+    "argomenti": [
+      "approssimazione"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-indset32-implica-tsp-logn",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Independent Set non ammette alcuna approssimazione con fattore costante se P ≠ NP: con la tecnica del prodotto di grafi un'approssimazione r diventa √r, e iterando si scende sotto qualunque soglia fino alla soluzione esatta. Un algoritmo 3/2-approssimante forza quindi P = NP. Con P = NP il TSP si risolve esattamente in tempo polinomiale, e la soluzione ottima ha rapporto 1, che è in particolare O(log n). L'implicazione è vera.",
+    "chiavi": [
+      "nessuna approssimazione con fattore costante",
+      "prodotto di grafi",
+      "P = NP",
+      "TSP si risolve esattamente",
+      "rapporto 1"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-tsp-selfreducible",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "TSP nella versione di decisione («esiste un tour di costo ≤ k?») è NP-completo, e per il primo teorema sulla self-reducibility ogni problema NP-completo è self-reducible. Si può anche vedere direttamente: con l'oracolo di decisione si trova prima il costo ottimo per ricerca binaria su k, poi si provano gli archi uno alla volta, rendendone il costo proibitivo e controllando se il costo ottimo resta invariato; gli archi indispensabili formano il tour. Il numero di chiamate all'oracolo è polinomiale.",
+    "chiavi": [
+      "versione di decisione",
+      "NP-completo",
+      "primo teorema sulla self-reducibility",
+      "ricerca binaria",
+      "chiamate all'oracolo"
+    ],
+    "argomenti": [
+      "self-reducibility",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-3col-pspacec-implica-npconp",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "3-Graph-Coloring sta in NP: il certificato è la colorazione, verificabile arco per arco. Se fosse PSPACE-completo, ogni problema di PSPACE si ridurrebbe a un problema di NP, quindi PSPACE ⊆ NP e, con NP ⊆ PSPACE, PSPACE = NP. Ma PSPACE è chiusa per complemento, quindi co-NP = co-PSPACE = PSPACE = NP.",
+    "chiavi": [
+      "3-Graph-Coloring sta in NP",
+      "PSPACE ⊆ NP",
+      "PSPACE = NP",
+      "PSPACE è chiusa per complemento",
+      "co-NP = NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-and-npc-conp-in-conp",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Basta un controesempio. Si prenda 𝔹 il problema banale che risponde sempre yes: sta in P, quindi in co-NP. Allora ℂ(x) = 𝔸(x) ∧ yes = 𝔸(x), cioè ℂ coincide con 𝔸, che è NP-completo. Se ℂ stesse in co-NP avremmo un problema NP-completo dentro co-NP, e per chiusura di co-NP rispetto alle riduzioni si otterrebbe NP ⊆ co-NP, quindi NP = co-NP, contro l'ipotesi.",
+    "chiavi": [
+      "controesempio",
+      "risponde sempre yes",
+      "ℂ coincide con 𝔸",
+      "NP-completo dentro co-NP",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-pspace-np-implica-p-conp",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Da PSPACE = NP, siccome PSPACE è chiusa per complemento, segue co-NP = co-PSPACE = PSPACE = NP: le classi NP, co-NP e PSPACE collassano fra loro. Ma nulla fa scendere il collasso fino a P: resta aperto se P = NP. Da P = co-NP seguirebbe P = NP, e questo non si deduce da PSPACE = NP. L'implicazione non è derivabile, quindi è falsa.",
+    "chiavi": [
+      "PSPACE è chiusa per complemento",
+      "co-NP = PSPACE = NP",
+      "nulla fa scendere il collasso fino a P",
+      "non è derivabile"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-turing-implica-karp",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Le riduzioni alla Turing sono più potenti di quelle alla Karp, perché possono interrogare l'oracolo e negarne la risposta. Controesempio: SAT ≤ₜ TAU, dato che basta chiedere all'oracolo per TAU se ¬φ è una tautologia e negare. Ma SAT ≤ₖ TAU porterebbe un problema NP-completo a ridursi alla Karp a un problema di co-NP, dando NP ⊆ co-NP e quindi NP = co-NP, contro l'ipotesi. Dunque esiste una riduzione alla Turing senza la corrispondente riduzione alla Karp.",
+    "chiavi": [
+      "più potenti",
+      "negarne la risposta",
+      "controesempio",
+      "SAT ≤ₜ TAU",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-smallfactor-npc-implica-npconp",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Small Factor ∈ NP ∩ co-NP: il certificato per le istanze yes è un fattore primo minore della soglia, quello per le istanze no è la fattorizzazione completa. Se fosse NP-completo, ogni problema di NP si ridurrebbe alla Karp a un problema che sta in co-NP, e per chiusura di co-NP rispetto alle riduzioni ogni problema di NP starebbe in co-NP. Quindi NP ⊆ co-NP, e per complementazione NP = co-NP.",
+    "chiavi": [
+      "NP ∩ co-NP",
+      "fattorizzazione completa",
+      "chiusura di co-NP rispetto alle riduzioni",
+      "NP ⊆ co-NP",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-qsat-conpc-implica-npconp",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Quantified SAT è PSPACE-completo. Se fosse anche co-NP-completo starebbe in co-NP, e ogni problema di PSPACE si ridurrebbe a esso: PSPACE ⊆ co-NP. Siccome NP ⊆ PSPACE, si ottiene NP ⊆ co-NP, e per complementazione NP = co-NP.",
+    "chiavi": [
+      "Quantified SAT è PSPACE-completo",
+      "PSPACE ⊆ co-NP",
+      "NP ⊆ PSPACE",
+      "NP ⊆ co-NP",
+      "NP = co-NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-pspacec-implica-npc",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Da 𝔸 PSPACE-completo segue che 𝔸 è NP-hard, perché NP ⊆ PSPACE e quindi ogni problema di NP si riduce ad 𝔸. Ma NP-completo richiede anche 𝔸 ∈ NP, e un problema PSPACE-completo sta in NP solo se PSPACE = NP, cosa non nota. Esempio: Quantified SAT è PSPACE-completo e NP-hard, ma non se ne conosce l'appartenenza a NP. L'implicazione non è derivabile.",
+    "chiavi": [
+      "NP-hard",
+      "NP ⊆ PSPACE",
+      "richiede anche 𝔸 ∈ NP",
+      "PSPACE = NP",
+      "Quantified SAT"
+    ],
+    "argomenti": [
+      "completezza",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-a0-npc-non-pspacec",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Supponiamo per assurdo 𝔸 NP-completo e PSPACE-completo. Allora 𝔸 ∈ NP e ogni problema di PSPACE si riduce ad 𝔸, quindi PSPACE ⊆ NP e, con NP ⊆ PSPACE, PSPACE = NP. PSPACE è chiusa per complemento, quindi co-NP = co-PSPACE = PSPACE = NP, contro l'ipotesi NP ≠ co-NP. Dunque 𝔸 non può essere PSPACE-completo.",
+    "chiavi": [
+      "per assurdo",
+      "PSPACE ⊆ NP",
+      "PSPACE = NP",
+      "PSPACE è chiusa per complemento",
+      "contro l'ipotesi"
+    ],
+    "argomenti": [
+      "completezza",
+      "spazio",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-ogni-r-indset-2r-clique",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Un insieme di vertici è independent set in G se e solo se è clique nel grafo complemento Ḡ. Dato l'algoritmo r-approssimante per Independent Set, lo si esegue su Ḡ: restituisce un independent set di Ḡ, cioè una clique di G, e poiché la complementazione conserva le taglie di tutti gli insiemi, ottimi compresi, il fattore r si conserva. Si ottiene un'r-approssimazione per Clique, e quindi a maggior ragione una 2r-approssimazione, dato che 2r ≥ r è un vincolo più debole.",
+    "chiavi": [
+      "grafo complemento",
+      "conserva le taglie",
+      "il fattore r si conserva",
+      "2r ≥ r",
+      "vincolo più debole"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "riduzioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-tsp3-implica-indset-conp",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Per il TSP generale il teorema del gap esclude ogni approssimazione costante se P ≠ NP: dalla NP-completezza di Hamiltonian Cycle si costruisce un'istanza in cui gli archi del grafo costano 1 e gli altri costano moltissimo, così che un'approssimazione costante distinguerebbe i grafi hamiltoniani. La premessa implica quindi P = NP. Con P = NP, Independent Set sta in NP = P, e P è chiusa per complemento, quindi Independent Set ∈ P = co-P ⊆ co-NP.",
+    "chiavi": [
+      "teorema del gap",
+      "Hamiltonian Cycle",
+      "nessuna approssimazione costante",
+      "P = NP",
+      "P è chiusa per complemento"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-np-turing-conpc",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Il complemento 𝔸̅ sta in co-NP, e 𝔹 è co-NP-completo, quindi esiste una riduzione alla Karp 𝔸̅ ≤ 𝔹. La riduzione alla Turing da 𝔸 a 𝔹 si costruisce così: dato x, si calcola l'istanza della riduzione di Karp per 𝔸̅, si interroga l'oracolo per 𝔹 e si nega la risposta, perché x è yes per 𝔸 se e solo se è no per 𝔸̅. Negare l'output è consentito alle riduzioni alla Turing ma non a quelle alla Karp: è per questo che le riduzioni alla Turing non distinguono NP da co-NP.",
+    "chiavi": [
+      "complemento sta in co-NP",
+      "riduzione alla Karp",
+      "interroga l'oracolo",
+      "si nega la risposta",
+      "non distinguono NP da co-NP"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "co-NP",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-or-sempre-np-implica-npconp",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Si specializza la premessa scegliendo 𝔸 il problema banale che risponde sempre no, che sta in P e quindi in NP. Allora ℂ(x) = no ∨ 𝔹(x) = 𝔹(x), cioè ℂ coincide con 𝔹. La premessa dice che ℂ ∈ NP, quindi ogni 𝔹 ∈ co-NP sta in NP: co-NP ⊆ NP, e per complementazione co-NP = NP.",
+    "chiavi": [
+      "risponde sempre no",
+      "ℂ coincide con 𝔹",
+      "co-NP ⊆ NP",
+      "per complementazione"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-pnp-implica-npconp",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "È il verso sbagliato. Vale NP ≠ co-NP ⟹ P ≠ NP, perché da P = NP seguirebbe co-NP = co-P = P = NP. Il verso opposto non è noto: è coerente uno scenario in cui P ≠ NP ma NP = co-NP, per esempio se NP e co-NP coincidessero in una classe strettamente più grande di P. Da P ≠ NP non si deriva quindi NP ≠ co-NP.",
+    "chiavi": [
+      "verso sbagliato",
+      "NP ≠ co-NP ⟹ P ≠ NP",
+      "co-P = P",
+      "scenario in cui P ≠ NP ma NP = co-NP"
+    ],
+    "argomenti": [
+      "classi-e-relazioni",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-compl-npc-leq-tau",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Se 𝔹 è NP-completo allora 𝔹 ∈ NP, e quindi il complemento 𝔹̅ sta in co-NP. Tautology è co-NP-completo, e per definizione di completezza ogni problema di co-NP si riduce alla Karp a esso. Dunque 𝔹̅ ≤ Tautology.",
+    "chiavi": [
+      "𝔹 ∈ NP",
+      "complemento sta in co-NP",
+      "Tautology è co-NP-completo",
+      "definizione di completezza"
+    ],
+    "argomenti": [
+      "co-NP",
+      "riduzioni",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-nphard-implica-leq-sat",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La premessa dice che 𝔹 è NP-hard, e solo questo. Ma 𝔹 ≤ SAT significherebbe 𝔹 ∈ NP, perché NP è chiusa rispetto alle riduzioni di Karp: un problema NP-hard non è necessariamente in NP. Controesempio: Quantified SAT è PSPACE-completo, quindi NP-hard, ma Quantified SAT ≤ SAT darebbe PSPACE ⊆ NP e quindi NP = PSPACE, cosa non nota. L'implicazione non è derivabile.",
+    "chiavi": [
+      "𝔹 è NP-hard",
+      "NP è chiusa rispetto alle riduzioni",
+      "NP-hard non è necessariamente in NP",
+      "Quantified SAT",
+      "NP = PSPACE"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "completezza"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-tutti-selfred-implica-smallfactor-p",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Il secondo teorema sulla self-reducibility dice: se P ≠ NP ∩ co-NP, cioè se esiste un problema in (NP ∩ co-NP) \\ P, allora esiste un problema in NP che non è self-reducible. Per contronominale, se ogni problema in NP è self-reducible allora NP ∩ co-NP ⊆ P, e con l'inclusione ovvia P ⊆ NP ∩ co-NP si ha P = NP ∩ co-NP. Small Factor sta in NP ∩ co-NP, quindi sta in P.",
+    "chiavi": [
+      "secondo teorema sulla self-reducibility",
+      "contronominale",
+      "P = NP ∩ co-NP",
+      "Small Factor sta in NP ∩ co-NP"
+    ],
+    "argomenti": [
+      "self-reducibility",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-vc-o-indset-meta",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Basta un controesempio. Nel grafo completo con n ≥ 3 vertici ogni coppia di vertici è collegata, quindi un independent set contiene al più 1 vertice, e 1 < n/2. Per lo stesso motivo un vertex cover deve contenere almeno n − 1 vertici, perché lasciarne fuori due scoprirebbe l'arco che li unisce, e n − 1 > n/2. Nessuna delle due alternative vale. In generale, dato che il complementare di un vertex cover di taglia k è un independent set di taglia n − k, se il minimo vertex cover supera n/2 il massimo independent set è sotto n/2: le due condizioni cadono insieme.",
+    "chiavi": [
+      "controesempio",
+      "grafo completo",
+      "independent set contiene al più 1 vertice",
+      "almeno n − 1 vertici",
+      "complementare di un vertex cover"
+    ],
+    "argomenti": [
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l21-vc-1413-implica-pnp",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Per il teorema del gap, Minimum Vertex Cover non ammette approssimazione con fattore r < 7/6 se P ≠ NP. Si confrontano i fattori: 14/13 ≈ 1,077 è strettamente minore di 7/6 ≈ 1,167. Un algoritmo polinomiale 14/13-approssimante violerebbe quindi la soglia, e questo è possibile solo se P = NP.",
+    "chiavi": [
+      "teorema del gap",
+      "r < 7/6",
+      "14/13 ≈ 1,077",
+      "strettamente minore",
+      "P = NP"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l24-vc-logn-implica-indset-lineare",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Il complementare di un vertex cover di taglia k è un independent set di taglia n − k. Se ogni grafo con n ≥ n₀ vertici ha un vertex cover di taglia k = O(log n), il suo complementare è un independent set di taglia n − O(log n), e siccome log n cresce più lentamente di n, n − O(log n) = Ω(n). La conclusione segue direttamente dalla premessa. Nota che la premessa è di per sé falsa — il grafo completo richiede un vertex cover di taglia n − 1 — ma un'implicazione con premessa falsa resta comunque vera.",
+    "chiavi": [
+      "complementare di un vertex cover",
+      "taglia n − k",
+      "n − O(log n) = Ω(n)",
+      "premessa è di per sé falsa",
+      "premessa falsa resta comunque vera"
+    ],
+    "argomenti": [
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l24-clique-alfa-indset-1piualfa",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Un insieme di vertici è clique in G se e solo se è independent set nel grafo complemento Ḡ. Eseguendo l'algoritmo α-approssimante per Clique su Ḡ si ottiene un independent set di G con lo stesso fattore α, perché la complementazione conserva le taglie di tutti gli insiemi, ottimi compresi. Siccome 1 + α ≥ α, un'α-approssimazione è in particolare una (1+α)-approssimazione: il vincolo richiesto è più debole.",
+    "chiavi": [
+      "grafo complemento",
+      "conserva le taglie",
+      "stesso fattore α",
+      "1 + α ≥ α",
+      "il vincolo richiesto è più debole"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "riduzioni",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l24-pspacec-cap-conpc-implica-pnp",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Se l'intersezione non è vuota esiste un problema che è insieme PSPACE-completo e co-NP-completo. Allora sta in co-NP e ogni problema di PSPACE si riduce a esso, quindi PSPACE ⊆ co-NP; con NP ⊆ PSPACE segue NP ⊆ co-NP, e dunque NP = co-NP = PSPACE. Il collasso però si ferma lì: nulla lo porta fino a P, e NP = co-NP non implica P = NP. L'implicazione non è derivabile, quindi è falsa.",
+    "chiavi": [
+      "insieme PSPACE-completo e co-NP-completo",
+      "PSPACE ⊆ co-NP",
+      "NP = co-NP = PSPACE",
+      "NP = co-NP non implica P = NP",
+      "non è derivabile"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "spazio"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l24-and-npc-non-in-conp",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La congiunzione di due problemi NP-completi può essere banale. Si scelgano due problemi NP-completi le cui istanze yes sono disgiunte, per esempio SAT ristretto alle formule la cui codifica inizia con 0 e SAT ristretto a quelle che iniziano con 1: entrambi restano NP-completi, ma nessuna istanza è yes per tutti e due. Allora ℂ risponde sempre no, si risolve in tempo costante e sta in P, quindi in co-NP. L'affermazione è falsa.",
+    "chiavi": [
+      "istanze yes sono disgiunte",
+      "ℂ risponde sempre no",
+      "tempo costante",
+      "sta in P, quindi in co-NP"
+    ],
+    "argomenti": [
+      "completezza",
+      "co-NP",
+      "classi-e-relazioni"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l24-max2sat-leq-smallfactor",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "La versione di decisione di Max-2-SAT («esiste un assegnamento che soddisfa almeno k clausole?») è NP-completa, mentre Small Factor sta in NP ∩ co-NP. Se Max-2-SAT ≤ Small Factor, un problema NP-completo si riduce alla Karp a un problema di co-NP: ogni problema di NP si riduce allora a Small Factor e, per chiusura di co-NP rispetto alle riduzioni, sta in co-NP. Quindi NP ⊆ co-NP, e per complementazione co-NP = NP.",
+    "chiavi": [
+      "versione di decisione di Max-2-SAT",
+      "NP-completa",
+      "Small Factor sta in NP ∩ co-NP",
+      "chiusura di co-NP rispetto alle riduzioni",
+      "NP ⊆ co-NP"
+    ],
+    "argomenti": [
+      "riduzioni",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l24-vc-ptas-implica-npconp",
+    "risposta": "VERO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Per il teorema del gap, Minimum Vertex Cover non ammette approssimazione con fattore r < 7/6 se P ≠ NP. Un PTAS darebbe una (1+ε)-approssimazione per ogni ε > 0, e scegliendo ε < 1/6 si scenderebbe sotto la soglia 7/6. Quindi Vertex Cover ∈ PTAS implica P = NP, e siccome P è chiusa per complemento segue co-NP = co-P = P = NP.",
+    "chiavi": [
+      "teorema del gap",
+      "r < 7/6",
+      "(1+ε)-approssimazione per ogni ε",
+      "ε < 1/6",
+      "P è chiusa per complemento"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "co-NP",
+      "problemi-specifici"
+    ],
+    "fonte": "derivata"
+  },
+  {
+    "id": "vf-l24-indset3-implica-circuitsat",
+    "risposta": "FALSO",
+    "opzioni": [
+      "VERO",
+      "FALSO"
+    ],
+    "spiegazione": "Independent Set non ammette approssimazione con fattore costante se P ≠ NP, quindi una 3-approssimazione forza P = NP. In quello scenario anche co-NP = co-P = P, e CircuitSAT sta in P = co-NP. Inoltre, con P = co-NP ogni problema non banale di P è co-NP-completo: dato un problema di co-NP = P, lo si riduce a CircuitSAT calcolandone la risposta in tempo polinomiale e mappando su un'istanza yes o no fissata. CircuitSAT sarebbe dunque co-NP-completo, e la premessa rende falsa la conclusione: l'implicazione è falsa.",
+    "chiavi": [
+      "nessuna approssimazione con fattore costante",
+      "P = NP",
+      "co-NP = co-P = P",
+      "ogni problema non banale di P",
+      "calcolandone la risposta"
+    ],
+    "argomenti": [
+      "approssimazione",
+      "completezza",
+      "co-NP"
+    ],
+    "fonte": "derivata"
+  }
+]

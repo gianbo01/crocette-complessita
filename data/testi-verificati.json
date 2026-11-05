@@ -1,0 +1,837 @@
+{
+  "Appello 0 2022-23.md#1": {
+    "id": "vf-a0-indset32-implica-tsp-logn",
+    "testo": "Se esiste un algoritmo di approssimazione 3/2 per il problema INDEPENDENT SET allora esiste un algoritmo polinomiale per il problema TSP che garantisce approssimazione O(log n) (su ogni istanza con n vertici).",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#2": {
+    "id": "vf-a0-tsp-selfreducible",
+    "testo": "Il problema TSP è selfreducible.",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#3": {
+    "id": "vf-a0-3col-pspacec-implica-npconp",
+    "testo": "Se 3-GRAPH-COLORING è PSPACE-completo allora co-NP = NP.",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#4": {
+    "id": "vf-a0-and-npc-conp-in-conp",
+    "testo": "Assumendo NP ≠ co-NP, per ogni problema NP-completo 𝔸 ed ogni problema 𝔹 ∈ co-NP il problema ℂ definito da ℂ(x) = 𝔸(x) ∧ 𝔹(x) appartiene alla classe co-NP.",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#5": {
+    "id": "vf-a0-pspace-np-implica-p-conp",
+    "testo": "Se PSPACE = NP allora P = co-NP.",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#6": {
+    "id": "vf-a0-turing-implica-karp",
+    "testo": "Se NP ≠ co-NP e 𝔸 ≤ₜ 𝔹 (cioè esiste una riduzione alla Turing) allora 𝔸 ≤ₖ 𝔹 (ovvero esiste una riduzione alla Karp).",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#7": {
+    "id": "vf-a0-smallfactor-npc-implica-npconp",
+    "testo": "Se il problema SMALL FACTOR è NP-completo allora NP = co-NP.",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#8": {
+    "id": "vf-a0-qsat-conpc-implica-npconp",
+    "testo": "Se QUANTIFIED SAT è co-NP-completo allora co-NP = NP.",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#9": {
+    "id": "vf-a0-pspacec-implica-npc",
+    "testo": "Se 𝔸 è PSPACE-completo allora 𝔸 è NP-completo.",
+    "ipotesi": ""
+  },
+  "Appello 0 2022-23.md#10": {
+    "id": "vf-a0-npc-non-pspacec",
+    "testo": "Se NP ≠ co-NP e 𝔸 è NP-completo allora 𝔸 non è PSPACE-completo.",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#1": {
+    "id": "vf-l21-ogni-r-indset-2r-clique",
+    "testo": "Per ogni algoritmo di r-approssimazione per il problema INDEPENDENT SET esiste un algoritmo di 2r-approssimazione per CLIQUE.",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#2": {
+    "id": "vf-l21-tsp3-implica-indset-conp",
+    "testo": "Se esiste un algoritmo polinomiale di 3-approssimazione per TSP (problema di ottimizzazione) allora il problema di decisione INDEPENDENT SET appartiene a co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#3": {
+    "id": "vf-l21-np-turing-conpc",
+    "testo": "Se 𝔸 ∈ NP e 𝔹 è co-NP-completo, allora esiste una Turing-reduction 𝔸 ≤ₜ 𝔹.",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#4": {
+    "id": "vf-l21-or-sempre-np-implica-npconp",
+    "testo": "Se per ogni coppia di problemi 𝔸 ∈ NP e 𝔹 ∈ co-NP il problema ℂ definito da ℂ(x) = 𝔸(x) ∨ 𝔹(x) appartiene alla classe NP allora co-NP = NP.",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#5": {
+    "id": "vf-l21-pnp-implica-npconp",
+    "testo": "Se P ≠ NP allora co-NP ≠ NP.",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#6": {
+    "id": "vf-l21-compl-npc-leq-tau",
+    "testo": "Se 𝔹 è un problema NP-completo allora 𝔹̅ ≤ TAUTOLOGY",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#7": {
+    "id": "vf-l21-nphard-implica-leq-sat",
+    "testo": "Se per ogni 𝔸 ∈ NP è vero che 𝔸 ≤ 𝔹 allora 𝔹 ≤ SAT — qui ≤ denota una riduzione alla Karp.",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#8": {
+    "id": "vf-l21-tutti-selfred-implica-smallfactor-p",
+    "testo": "Se ogni problema in NP è self-reducible allora SMALL FACTOR ∈ P.",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#9": {
+    "id": "vf-l21-vc-o-indset-meta",
+    "testo": "In ogni grafo non diretto con n vertici, esiste o un vertex cover di taglia al più n/2 o un independent set di taglia almeno n/2.",
+    "ipotesi": ""
+  },
+  "Appello del 1 Luglio 2021.md#10": {
+    "id": "vf-l21-vc-1413-implica-pnp",
+    "testo": "Se esiste un algoritmo polinomiale che garantisce approssimazione 14/13 per il problema di trovare il minimo vertex cover di un grafo allora NP = P.",
+    "ipotesi": ""
+  },
+  "Appello del 13 Settembre 2019.md#1": {
+    "id": "vf-p-diverso-np-sotto-ipotesi",
+    "testo": "P ≠ NP",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 13 Settembre 2019.md#2": {
+    "id": "vf-savitch-space-nspace-2on",
+    "testo": "SPACE(2ᴼ⁽ⁿ⁾) = NSPACE(2ᴼ⁽ⁿ⁾)",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 13 Settembre 2019.md#3": {
+    "id": "vf-p-uguale-apx",
+    "testo": "P = APX",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 13 Settembre 2019.md#4": {
+    "id": "vf-vc-in-conp",
+    "testo": "VERTEX COVER ∈ co-NP",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 13 Settembre 2019.md#5": {
+    "id": "vf-nspace-logn-in-p",
+    "testo": "NSPACE(log n) ⊆ P",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 13 Settembre 2019.md#6": {
+    "id": "vf-apx-diverso-ptas",
+    "testo": "APX ≠ PTAS",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 13 Settembre 2019.md#7": {
+    "id": "vf-2phampath-non-in-p",
+    "testo": "2-PLAYER-HAMILTONIAN-PATH ∉ P",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 15 Luglio 2019.md#1": {
+    "id": "vf-lowerbound-loglog",
+    "testo": "Se ogni algoritmo che risolve SAT ha complessità Ω (n+n^((log log n)/(log n))) allora P ≠ NP",
+    "ipotesi": ""
+  },
+  "Appello del 15 Luglio 2019.md#2": {
+    "id": "vf-pnp-implica-npspace-non-poly",
+    "testo": "Se P ≠ NP, allora nessun problema in NPSPACE può essere risolto in tempo polinomiale",
+    "ipotesi": ""
+  },
+  "Appello del 15 Luglio 2019.md#3": {
+    "id": "vf-2sat-riducibile-a-sat",
+    "testo": "2-SAT è riducibile in tempo polinomiale al problema SAT",
+    "ipotesi": ""
+  },
+  "Appello del 15 Luglio 2019.md#4": {
+    "id": "escludi",
+    "testo": "Non esiste alcun algoritmo polinomiale che garantisce 11/10-approssimazione per il problema di trovare il minimo numero di colori per colorare propriamente i vertici di un grafo",
+    "ipotesi": ""
+  },
+  "Appello del 15 Luglio 2019.md#5": {
+    "id": "escludi",
+    "testo": "⋃_(k>0)TIME(2^(nᵏ)) ≠ ⋃_(k>0)NTIME(2^(nᵏ))",
+    "ipotesi": ""
+  },
+  "Appello del 15 Luglio 2019.md#6": {
+    "id": "vf-nspace-logn-in-p",
+    "testo": "NSPACE(log n) ⊆ P",
+    "ipotesi": ""
+  },
+  "Appello del 15 Luglio 2019.md#7": {
+    "id": "escludi",
+    "testo": "APX ⊆ PTAS",
+    "ipotesi": ""
+  },
+  "Appello del 15 Luglio 2019.md#8": {
+    "id": "vf-tautologia-poly-implica-np-in-p",
+    "testo": "Se esiste un algoritmo polinomiale per decidere se una formula Booleana è una tautologia, allora ogni problema in NP può essere risolto in tempo polinomiale.",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#1": {
+    "id": "vf-np-pspace-implica-p-np",
+    "testo": "Se NP ≠ PSPACE allora P ≠ NP",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#2": {
+    "id": "vf-tau-non-p-reach-non-npc",
+    "testo": "Se TAUTOLOGY ∉ P allora REACHABILITY non è NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#3": {
+    "id": "vf-copspace-riduce-a-compl-implica-nphard",
+    "testo": "Se per ogni problema ℂ ∈ co-PSPACE, vale che ℂ ≤ 𝔸̅ allora 𝔸 è NP-hard",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#4": {
+    "id": "vf-npconp-implica-smallfactor-conpc",
+    "testo": "Se co-NP = NP allora SMALL FACTOR è co-NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#5": {
+    "id": "vf-np-almeno-due-istanze-sbagliate",
+    "testo": "Se 𝔸 ∈ NP allora per ogni algoritmo polinomiale A esistono almeno 2 istanze x₁, x₂ ∈ I(𝔸) sulle quali l'algoritmo fallisce, ovvero A(x₁) ≠ 𝔸(x₁) e A(x₂) ≠ 𝔸(x₂)",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#6": {
+    "id": "vf-a-leq-compl-conpc-implica-non-conp",
+    "testo": "Se 𝔸 ≤ 𝔹̅ e 𝔹 è co-NP-completo allora 𝔸 ∉ co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#7": {
+    "id": "vf-npc-e-riduzione-implica-npc",
+    "testo": "Se 𝔸 è NP-completo e 𝔸 ≤ 𝔹 allora 𝔹 è NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#8": {
+    "id": "vf-conp-in-exptime",
+    "testo": "Per ogni problema in co-NP esistono costanti a,k >1, ed un algoritmo A tale che A risolve ogni istanza x di taglia n in tempo O(a^(nᵏ))",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#9": {
+    "id": "vf-npc-sbaglia-su-tutte-le-grandi",
+    "testo": "Se un problema 𝔸 è NP-completo e P ≠ NP, allora per ogni algoritmo polinomiale esiste un n tale che per ogni istanza di taglia maggiore di n l'algoritmo fornisce una soluzione errata",
+    "ipotesi": ""
+  },
+  "Appello del 17 Giugno 2025.md#10": {
+    "id": "vf-ptas-polinomio-fissato",
+    "testo": "Se un problema di ottimizzazione A è nella classe PTAS allora esiste una funzione polinomiale p() ed un algoritmo che per ogni istanza x e per ogni costante c>1 in tempo O(p(|x| · 2ᶜ)) fornisce una c-approssimazione alla soluzione ottima per x",
+    "ipotesi": ""
+  },
+  "Appello del 19 Giugno 2019.md#1": {
+    "id": "vf-lowerbound-sat-superpoly",
+    "testo": "Se si dimostrasse che ogni algoritmo che risolve SAT deve avere complessità Ω(n^(log n)) allora P ≠ NP.",
+    "ipotesi": ""
+  },
+  "Appello del 19 Giugno 2019.md#2": {
+    "id": "vf-formula-su-cui-tutti-sbagliano",
+    "testo": "Sia U l'insieme degli algoritmi che prendono in input una formula CNF φ ed in tempo polinomiale rispondono yes o no. Se P ≠ NP allora per ogni n sufficientemente grande, esiste una formula φ⁽ⁿ⁾ di taglia n tale che ogni algoritmo in U fallisce su φ⁽ⁿ⁾, ovvero se φ⁽ⁿ⁾ è soddisfacibile ogni algoritmo in U dice no su input φ⁽ⁿ⁾, mentre se φ⁽ⁿ⁾ non è soddisfacibile ogni algoritmo in U dice yes su input φ⁽ⁿ⁾.",
+    "ipotesi": ""
+  },
+  "Appello del 19 Giugno 2019.md#3": {
+    "id": "vf-riduzione-a-sat-implica-npc",
+    "testo": "Se per un problema 𝔸 ∈ NP esiste una riduzione 𝔸 ≤ SAT allora 𝔸 è NP-completo.",
+    "ipotesi": ""
+  },
+  "Appello del 19 Giugno 2019.md#4": {
+    "id": "vf-np-in-conp-implica-conp-in-np",
+    "testo": "Se NP ⊆ co-NP allora co-NP ⊆ NP.",
+    "ipotesi": ""
+  },
+  "Appello del 19 Giugno 2019.md#5": {
+    "id": "vf-turing-ma-non-karp",
+    "testo": "Si assuma che NP ≠ co-NP. Allora esistono problemi 𝔸 ∈ NP e 𝔹 ∈ co-NP tali che 𝔸 ≤ₜ 𝔹, 𝔸 ≰ 𝔹 ovvero esiste una riduzione alla Turing da A a B ma non esiste una riduzione alla Karp da A a B.",
+    "ipotesi": ""
+  },
+  "Appello del 19 Giugno 2019.md#6": {
+    "id": "vf-selfred-npcapconp",
+    "testo": "Se NP ∩ co-NP ≠ P allora tutti i problemi in NP sono self-reducible.",
+    "ipotesi": ""
+  },
+  "Appello del 19 Giugno 2019.md#7": {
+    "id": "vf-2phampath-poly-implica-pnp",
+    "testo": "Se esistesse un algoritmo polinomiale deterministico per 2-PLAYER-HAMPATH allora varrebbe la relazione P = NP.",
+    "ipotesi": ""
+  },
+  "Appello del 19 Giugno 2019.md#8": {
+    "id": "vf-ptas-epsilon-05-opt-11",
+    "testo": "Sia x un'istanza di un problema di minimizzazione 𝔸. Sia OPT(x) il valore della soluzione ottima per x. Sia A un PTAS (polynomial time approximation scheme) per il problema 𝔸. Se per ε = 0.5 il valore della soluzione ritornata da A su input (x, ε) è A(x, ε) = 15 allora possiamo dedurre OPT(x) ≥ 11.",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2023.md#1": {
+    "id": "vf-pnp-implica-np-pspace",
+    "testo": "P ≠ NP ⟹ NP ≠ PSPACE",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2023.md#2": {
+    "id": "vf-npconp-implica-pspace-p",
+    "testo": "NP ≠ co-NP ⟹ PSPACE ≠ P",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2023.md#3": {
+    "id": "vf-pspacec-implica-nphard",
+    "testo": "𝔸 ∈ PSPACE-c ⟹ 𝔸 ∈ NP-hard",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2023.md#4": {
+    "id": "vf-smallfactor-non-p-selfred",
+    "testo": "SMALL FACTOR ∉ P ⟹ ∀𝔸 ∈ NP è self reducible",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2023.md#5": {
+    "id": "vf-eulpath-npc-sse-pnp",
+    "testo": "EULPATH ∈ NPC ⟺ P = NP",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2023.md#6": {
+    "id": "vf-approx-indset-implica-vc",
+    "testo": "∃ alg 3/2-approx per INDEPENDENT SET ⟹ ∃ alg di 3/2-approx per VERTEX COVER",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2023.md#7": {
+    "id": "vf-nphard-istanza-singola",
+    "testo": "𝔸ᴼᴾᵀ ∈ NP-hard e P ≠ NP ⟹ ∃ x ∈ I(𝔸) t.c. ∄ alg polytime fornisce soluzione ottima per x",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2023.md#8": {
+    "id": "vf-pnp-implica-alg-per-ogni-np",
+    "testo": "P = NP ⟹ ∃ alg A polytime ∀𝔸 ∈ NP e ∀ x ∈ I(𝔸) t.c. A(x) = 𝔸(x)",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#1": {
+    "id": "vf-np-pspace-implica-conp-np",
+    "testo": "Se NP ≠ PSPACE allora co-NP ≠ NP",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#2": {
+    "id": "vf-reach-npc-implica-tau-in-np",
+    "testo": "Se REACHABILITY è NP-completo allora TAUTOLOGY ∈ NP",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#3": {
+    "id": "vf-copspace-riduce-a-compl-implica-nphard",
+    "testo": "Se per ogni problema ℂ ∈ co-PSPACE, vale che ℂ ≤ 𝔸̅, allora 𝔸 è NP-HARD",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#4": {
+    "id": "vf-smallfactor-conpc-implica-npconp",
+    "testo": "Se SMALL-FACTOR è co-NP-completo allora co-NP = NP",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#5": {
+    "id": "vf-istanza-che-sconfigge-tutti",
+    "testo": "Se 𝔸 è NP-completo e P ≠ co-NP allora esiste un'istanza x ∈ I(𝔸) su cui ogni algoritmo polinomiale A fallisce, ovvero A(x) ≠ 𝔸(x)",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#6": {
+    "id": "vf-disgiunzione-conp-oppure-non-npc",
+    "testo": "Se 𝔸 ∈ co-NP allora per ogni problema 𝔹 vale che ((𝔸 ≤ 𝔹̅) ∨ (𝔹 non è NPC))",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#7": {
+    "id": "vf-npc-e-riduzione-implica-npc",
+    "testo": "Se 𝔸 è NP-completo e 𝔸 ≤ 𝔹 allora 𝔹 è NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#8": {
+    "id": "vf-npspace-in-exptime",
+    "testo": "Per ogni problema in NPSPACE esistono costanti a,k > 1 ed un algoritmo A tale che A risolve ogni istanza x di taglia n in tempo O(a^(nᵏ))",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#9": {
+    "id": "vf-vc-leq-logspace-implica-indset-ptas",
+    "testo": "Se un problema 𝔸 è in SPACE(log n) e VERTEX COVER ≤ 𝔸, allora INDEPENDENT SET ∈ PTAS",
+    "ipotesi": ""
+  },
+  "Appello del 22 Giugno 2026.md#10": {
+    "id": "vf-ptas-fptas-implica-npconp",
+    "testo": "Se PTAS = FPTAS allora co-NP = NP",
+    "ipotesi": ""
+  },
+  "Appello del 22 Settembre 2020.md#1": {
+    "id": "vf-approx-r-indset-implica-2r-clique",
+    "testo": "Se esistesse un algoritmo di approssimazione r per il problema INDEPENDENT SET allora esisterebbe anche un algoritmo di approssimazione 2r per il problema CLIQUE.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 22 Settembre 2020.md#2": {
+    "id": "vf-tsp-3approx-implica-tspdec-conp",
+    "testo": "Se esiste un algoritmo di 3-approssimazione per TSP (problema di ottimizzazione) allora il problema di decisione TSP_DEC ∈ co-NP",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 22 Settembre 2020.md#3": {
+    "id": "vf-vc-non-pspace-completo",
+    "testo": "VERTEX COVER non è PSPACE-completo.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 22 Settembre 2020.md#4": {
+    "id": "vf-or-np-conp-in-np",
+    "testo": "Per ogni coppia di problemi 𝔸 ∈ NP e 𝔹 ∈ co-NP il problema ℂ definito da ℂ(x) = 𝔸(x) ∨ 𝔹(x) appartiene alla classe NP.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 22 Settembre 2020.md#5": {
+    "id": "vf-p-diverso-conp-implica-apx-ptas",
+    "testo": "Se P ≠ co-NP allora APX ≠ PTAS",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 22 Settembre 2020.md#6": {
+    "id": "vf-tautologia-poly-implica-np-in-p",
+    "testo": "Se esistesse un algoritmo polinomiale per decidere se una formula Booleana è una tautologia, allora ogni problema in NP potrebbe essere risolto in tempo polinomiale.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 27 Settembre 2023.md#1": {
+    "id": "vf-np-pspace-implica-p-np",
+    "testo": "NP ≠ PSPACE ⟹ P ≠ NP",
+    "ipotesi": ""
+  },
+  "Appello del 27 Settembre 2023.md#2": {
+    "id": "vf-npconp-implica-p-diverso-intersez",
+    "testo": "NP ≠ co-NP ⟹ P ≠ NP ∩ co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 27 Settembre 2023.md#3": {
+    "id": "vf-pspacec-implica-nphard",
+    "testo": "𝔸 ∈ PSPACE-C ⟹ 𝔸 ∈ NP-hard",
+    "ipotesi": ""
+  },
+  "Appello del 27 Settembre 2023.md#4": {
+    "id": "vf-smallfactor-conpc-implica-pnp",
+    "testo": "SMALL FACTOR ∈ co-NPC ⟹ P = NP",
+    "ipotesi": ""
+  },
+  "Appello del 27 Settembre 2023.md#5": {
+    "id": "vf-p-apx-implica-eulpath-npc",
+    "testo": "P = APX ⟹ EULERIAN PATH ∈ NPC",
+    "ipotesi": ""
+  },
+  "Appello del 27 Settembre 2023.md#6": {
+    "id": "vf-nphard-istanza-singola",
+    "testo": "𝔸ᴼᴾᵀ ∈ NP-hard e P ≠ NP ⟹ ∃ x ∈ I(𝔸) t.c. ∄ alg polytime fornisce soluzione OPT per x",
+    "ipotesi": ""
+  },
+  "Appello del 27 Settembre 2023.md#7": {
+    "id": "vf-pnp-infinite-istanze-sbagliate",
+    "testo": "P ≠ NP ⟹ ∀ Π polytime, ∀ 𝔸 ∈ NP ∃ ∞ istanze x ∈ I(𝔸) t.c. Π(x) ≠ 𝔸(x)",
+    "ipotesi": ""
+  },
+  "Appello del 27 Settembre 2023.md#8": {
+    "id": "vf-qsat-conpc-implica-vc-conp",
+    "testo": "QSAT ∈ co-NPC ⟹ VERTEX COVER ∈ co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 3 Febbraio 2023.md#1": {
+    "id": "vf-approx-indset-3",
+    "testo": "Non esiste un algoritmo di approssimazione 3 per il problema INDEPENDENT SET.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#2": {
+    "id": "vf-selfred-npcapconp",
+    "testo": "Se co-NP ∩ NP ≠ P allora ogni problema nella classe NP è selfreducible.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#3": {
+    "id": "vf-apx-diverso-ptas",
+    "testo": "APX ≠ PTAS",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#4": {
+    "id": "vf-p-non-in-np-cap-conp",
+    "testo": "Se 𝔸 ∈ P allora 𝔸 ∉ NP ∩ co-NP",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#5": {
+    "id": "vf-pspace-diverso-conp",
+    "testo": "PSPACE ≠ co-NP.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#6": {
+    "id": "vf-tutte-clique-sotto-k",
+    "testo": "Esiste un algoritmo polinomiale che per ogni grafo G ed ogni valore k determina se tutte le clique di G hanno taglia inferiore a k.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#7": {
+    "id": "vf-smallfactor-non-npc",
+    "testo": "Il problema SMALL FACTOR non è NP-completo.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#8": {
+    "id": "vf-qsat-conp-completo",
+    "testo": "QUANTIFIED SAT è co-NP-completo",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#9": {
+    "id": "vf-pspacec-non-in-conp",
+    "testo": "Se A è PSPACE-completo allora A ∉ co-NP.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 3 Febbraio 2023.md#10": {
+    "id": "vf-npc-non-in-conp",
+    "testo": "Se A è NP-completo allora A non è in co-NP.",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Appello del 31 Gennaio 2024.md#1": {
+    "id": "vf-2psat-nspacelog-implica-tau-sat",
+    "testo": "TWO-PLAYER-SAT ∈ NSPACE(log n) ⟹ TAUTOLOGY ≤ SAT",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#2": {
+    "id": "vf-tau-leq-2psat-implica-conp-pspace",
+    "testo": "TAUTOLOGY ≤ TWO-PLAYER-SAT ⟹ co-NP = PSPACE",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#3": {
+    "id": "vf-pspacec-implica-nphard",
+    "testo": "Se A è PSPACE-completo allora A è NP-hard.",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#4": {
+    "id": "vf-npc-e-pspaceh-implica-pspace-p",
+    "testo": "Se esiste un problema A tale che A è NP-completo e A è PSPACE-hard, allora PSPACE = P.",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#5": {
+    "id": "vf-and-di-due-npc",
+    "testo": "Se A è NP-completo e B è NP-completo allora il problema C definito da C(x) = A(x) ∧ B(x) è NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#6": {
+    "id": "vf-or-di-due-np",
+    "testo": "Se A ∈ NP e B ∈ NP allora il problema C definito da C(x) = A(x) ∨ B(x) appartiene alla classe NP.",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#7": {
+    "id": "vf-indset-pspacec-implica-npconp",
+    "testo": "Se INDEPENDENT SET è PSPACE-completo allora NP = co-NP.",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#8": {
+    "id": "vf-tspsym-apx-implica-npconp",
+    "testo": "Se SYMETRIC TSP ∈ APX allora co-NP = NP.",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#9": {
+    "id": "vf-sat-non-leq-2sat-implica-tau-non-eulcyc",
+    "testo": "Se SAT ≰ 2-SAT allora TAUTOLOGY ≰ EULERIANCYCLE",
+    "ipotesi": ""
+  },
+  "Appello del 31 Gennaio 2024.md#10": {
+    "id": "vf-apx-fptas-implica-p-conp",
+    "testo": "Se APX ≠ FPTAS allora P ≠ co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2023.md#1": {
+    "id": "vf-lowerbound-sat-inverso",
+    "testo": "∀ alg che risolve SAT ha Ω(1/(n^(log n))) ⟹ P ≠ NP",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2023.md#2": {
+    "id": "vf-ogni-algoritmo-sbaglia-a-ogni-taglia",
+    "testo": "Sia U l'insieme degli algoritmi che prendono in input una formula CNF φ ed in tempo polinomiale rispondono yes o no. Se P ≠ NP allora ∀ A ∈ U e ∀ n sufficientemente grande, ∃φ⁽ⁿ⁾ di taglia n t.c. A fallisce su φ⁽ⁿ⁾, ovvero se φ⁽ⁿ⁾ è soddisfacibile allora A dice no su input φ⁽ⁿ⁾, mentre se φ⁽ⁿ⁾ non è soddisfacibile allora A dice yes su input φ⁽ⁿ⁾",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2023.md#3": {
+    "id": "vf-riduzione-a-sat-implica-npc",
+    "testo": "𝔸 ∈ NP t.c. ∃𝔸 ≤ SAT ⟹ 𝔸 ∈ NPC",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2023.md#4": {
+    "id": "vf-apx-ptas-implica-pnp",
+    "testo": "APX ≠ PTAS ⟹ P ≠ NP",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2023.md#5": {
+    "id": "vf-sat-turing-tau",
+    "testo": "Si assuma che NP ≠ co-NP. Allora SAT ≤ₜ TAU e TAU ≰ SAT",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2023.md#6": {
+    "id": "vf-mincol-87-indset-52",
+    "testo": "Se ∃ alg polinomiale che garantisce 8/7-approssimazione per MIN COL allora ∃ alg polinomiale che garantisce 5/2-approssimazione per INDEPENDENT SET",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2023.md#7": {
+    "id": "vf-ptas-epsilon-05-senza-valore",
+    "testo": "Sia x ∈ I(𝔸) dove 𝔸 problema di minimizzazione. Sia OPT(x) il valore della soluzione ottima per x. Sia A un PTAS per il problema 𝔸. Se ε = 0,5 il valore della soluzione ritornata da A su un input (x,ε) è A(x,ε) allora possiamo dedurre OPT(x) ≥ 11",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2023.md#8": {
+    "id": "vf-a-leq-vc-implica-compl-turing-indset",
+    "testo": "𝔸 ≤ VERTEX COVER ⟹ 𝔸̅ ≤ₜ INDEPENDENT SET",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#1": {
+    "id": "vf-indset-due-terzi-implica-vc-meta",
+    "testo": "Se un grafo non diertto G con n vertici ha un INDEPENDENT SET di taglia (2/3)n allora G ha un VERTEX COVER di taglia n/2",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#2": {
+    "id": "vf-approx-due-terzi-indset-vc",
+    "testo": "Se esiste un algoritmo di 2/3-approssimazione per MAXIMUM INDEPENDENT SET allora esiste anche un algoritmo di 2/3-approssimazione per MINIMUM VERTEX COVER",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#3": {
+    "id": "vf-conp-pspace-implica-2psat-non-leq-sat",
+    "testo": "Se co-NP ≠ PSPACE allora 2-PLAYER SAT ≰ SAT",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#4": {
+    "id": "vf-ptas-apx-implica-npspace-p",
+    "testo": "Se PTAS ≠ APX allora NPSPACE ≠ P",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#5": {
+    "id": "vf-and-di-due-pspace-meno-p",
+    "testo": "Se P ≠ NP allora per ogni coppia di problemi A,B ∈ PSPACE/P il problema C = A ∧ B non è in P (un'istanza di C è yes se e solo se è yes sia per A che per B)",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#6": {
+    "id": "vf-selfreducible-implica-npc",
+    "testo": "Se A è SELF-REDUCIBLE allora A è NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#7": {
+    "id": "vf-tutti-selfreducible-implica-p-intersez",
+    "testo": "Se tutti i problemi in NP sono SELF-REDUCIBLE allora P = NP ∩ co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#8": {
+    "id": "vf-max3sat-2approx-implica-vc-98",
+    "testo": "Se P ≠ NP ed esiste un algoritmo di 2-approssimazione per MAX-3-SAR allora esiste un algoritmo di 9/8-approssimazione per VERTEX COVER",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#9": {
+    "id": "vf-qsat-npc-implica-vc-intersez",
+    "testo": "Se QUANTIFIED SAT è NP-completo allora VERTEX COVER ∈ co-NP ∧ NP",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#10": {
+    "id": "vf-qsat-leq-a-implica-compl-pspacec",
+    "testo": "Se QUANTIFIED SAT ≤ A allora A̅ è PSPACE-completo",
+    "ipotesi": ""
+  },
+  "Appello del 6 Luglio 2026.md#11": {
+    "id": "vf-npconp-implica-smallfactor-npc",
+    "testo": "Se NP ≠ co-NP allora SMALLFACTOR è NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#1": {
+    "id": "vf-approx-vc-implica-approx-indset",
+    "testo": "se per un α > 0 esiste un algoritmo di α-approssimazione per MINIMUM VERTEX COVER allora esiste anche un algoritmo di α-approssimazione per MAXIMUM INDEPENDENT SET",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#2": {
+    "id": "vf-approx-clique-implica-approx-indset",
+    "testo": "se per un α > 0 esiste un algoritmo di α-approssimazione per MAXIMUM CLIQUE allora esiste anche un algoritmo di α-approssimazione per MAXIMUM INDEPENDENT SET",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#3": {
+    "id": "vf-vc-87-implica-fptas",
+    "testo": "se esiste un algoritmo di 8/7-approssimazione per MINIMUM VERTEX COVER allora MINIMUM VERTEX COVER ∈ FPTAS",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#4": {
+    "id": "vf-sat-non-leq-2sat-implica-tau-non-leq-clique",
+    "testo": "SAT ≰ 2-SAT ⟹ TAUTOLOGY ≰ CLIQUE",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#5": {
+    "id": "vf-apx-fptas-sse-p-conp",
+    "testo": "APX ≠ FPTAS ⟺ P ≠ co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#6": {
+    "id": "vf-eulpath-non-npc-implica-p-apx",
+    "testo": "Se il problema di decisione EULERIAN PATH non è NP-completo allora P = APX",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#7": {
+    "id": "vf-pnp-infinite-istanze-sbagliate",
+    "testo": "Se P ≠ NP allora per ogni algoritmo polinomiale Π e per ogni problema 𝔸 nella classe NP esistono infinite istanze x di 𝔸 tali che la soluzione ritornata da Π su x è scorretta, ovvero 𝔸(x) ≠ Π(x)",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#8": {
+    "id": "vf-qsat-conpc-implica-vc-conp",
+    "testo": "Se QUANTIFIED SAT è co-NP-completo allora VERTEX COVER ∈ co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#9": {
+    "id": "vf-qsat-leq-a-implica-compl-conpc",
+    "testo": "Se QUANTIFIED SAT ≤ 𝔸 allora 𝔸̅ è co-NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 7 Luglio 2025.md#10": {
+    "id": "vf-npconp-implica-smallfactor-npc",
+    "testo": "Se NP ≠ co-NP allora SMALL FACTOR è NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 8 Luglio 2024.md#1": {
+    "id": "vf-l24-vc-logn-implica-indset-lineare",
+    "testo": "Se esiste n₀ tale che ogni grafo G con n ≥ n₀ vertici ha un vertex cover di taglia k = O(log n) allora ogni G con n ≥ n₀ vertici ha un independent set di taglia ι = Ω(n).",
+    "ipotesi": ""
+  },
+  "Appello del 8 Luglio 2024.md#2": {
+    "id": "vf-l24-clique-alfa-indset-1piualfa",
+    "testo": "Se esiste un algoritmo di α-approssimazione per CLIQUE allora esiste un algoritmo di (1+α)-approssimazione per INDEPENDENT SET.",
+    "ipotesi": ""
+  },
+  "Appello del 8 Luglio 2024.md#3": {
+    "id": "vf-l24-pspacec-cap-conpc-implica-pnp",
+    "testo": "Sia PSPACEc la classe dei problemi PSPACE-completi e sia co-NPc la classe dei problemi co-NP-completi. Se PSPACEc ∩ co-NPc ≠ ∅ allora NP = P",
+    "ipotesi": ""
+  },
+  "Appello del 8 Luglio 2024.md#4": {
+    "id": "vf-l24-and-npc-non-in-conp",
+    "testo": "Se A, B sono problemi NP-completi, allora il problema C definito da ℂ(x) = 𝔸(x) ∧ 𝔹(x) non è in co-NP.",
+    "ipotesi": ""
+  },
+  "Appello del 8 Luglio 2024.md#5": {
+    "id": "vf-p-diverso-conp-implica-apx-ptas",
+    "testo": "Se P ≠ co-NP allora APX ≠ PTAS",
+    "ipotesi": ""
+  },
+  "Appello del 8 Luglio 2024.md#6": {
+    "id": "vf-l24-max2sat-leq-smallfactor",
+    "testo": "Se MAX-2-SAT ≤ SMALL FACTOR allora co-NP = NP",
+    "ipotesi": ""
+  },
+  "Appello del 8 Luglio 2024.md#7": {
+    "id": "vf-l24-vc-ptas-implica-npconp",
+    "testo": "Se VERTEX COVER ∈ PTAS allora NP = co-NP.",
+    "ipotesi": ""
+  },
+  "Appello del 8 Luglio 2024.md#8": {
+    "id": "vf-l24-indset3-implica-circuitsat",
+    "testo": "Se esiste un algoritmo di 3-approssimazione per INDEPENDENT SET allora CIRCUITSAT non è co-NP-completo.",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#1": {
+    "id": "vf-2psat-conp-implica-leq-vc",
+    "testo": "Se 2-PLAYER SAT ∈ co-NP allora 2-PLAYER SAT ≤ VERTEX COVER",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#2": {
+    "id": "vf-approx-alfa-clique-indset-vertici",
+    "testo": "Se per una funzione α esiste un algoritmo di approssimazione per MAXIMUM CLIQUE che su ogni grado ritorna in tempo polinomiale una clique di taglia non minore di α(|V|) volte la clique di taglia massima allora esiste anche un algoritmo di polinomiale che su ogni grafo ritorna un independent set di taglia non minore di α(|V|) volte il massimo independent set-V indica l'insieme dei vertici",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#3": {
+    "id": "vf-vc-fptas-implica-max3sat-10099",
+    "testo": "Se MINIMUN VERTX COVER ∈ FPTAS allora esiste un algoritmo di 100/99-approsimazione per MAX-3-SAT",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#4": {
+    "id": "vf-apx-fptas-sse-p-conp",
+    "testo": "APX ≠ FPTAS se e solo se P ≠ co-NP",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#5": {
+    "id": "vf-insieme-istanze-su-cui-tutti-sbagliano",
+    "testo": "Se P ≠ NP allora per ogni problema 𝔸 nella classe NP esiste un insieme di istanze X di 𝔸 tali che, per ogni algoritmo polinomiale Π su ogni x ∈ X è scorretta, ovvero 𝔸(x) ≠ Π",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#6": {
+    "id": "vf-vc-non-conp-implica-qsat-non-conpc",
+    "testo": "Se VERTEX COVER ∉ co-NP allora QUANTIFIED SAT non è co-NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#7": {
+    "id": "vf-approx-vc-implica-approx-indset",
+    "testo": "Se per un α > 0 esiste un algoritmo di α-approsimazione per MINIMUM VERTEX COVER allora esiste anche un algoritmo di α-approssimazione per MAXIMUM INDEPENDENT SET",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#8": {
+    "id": "vf-npconp-implica-smallfactor-non-npc",
+    "testo": "Se NP ≠ co-NP allora SMALL FACTOR non è NP-completo",
+    "ipotesi": ""
+  },
+  "Appello del 9 Settembre 2026.md#9": {
+    "id": "vf-3sat-leq-2sat-implica-ham-leq-eul",
+    "testo": "3-SAT ≤ 2-SAT ⟹ HAM-CYCLE ≤ EULERIAN CYCLE",
+    "ipotesi": ""
+  },
+  "Simulazione d'Esame 2022.md#1": {
+    "id": "vf-p-diverso-np-sotto-ipotesi",
+    "testo": "P ≠ NP",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Simulazione d'Esame 2022.md#2": {
+    "id": "escludi",
+    "testo": "TIME(2ᴼ⁽ⁿ⁾) = NTIME(2ᴼ⁽ⁿ⁾)",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Simulazione d'Esame 2022.md#3": {
+    "id": "vf-p-uguale-apx",
+    "testo": "P = APX",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Simulazione d'Esame 2022.md#4": {
+    "id": "vf-vc-non-in-conp",
+    "testo": "VERTEX COVER ∉ co-NP",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Simulazione d'Esame 2022.md#5": {
+    "id": "vf-ntime-logn-in-p",
+    "testo": "NTIME(log n) ⊆ P",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Simulazione d'Esame 2022.md#6": {
+    "id": "vf-apx-diverso-ptas",
+    "testo": "APX ≠ PTAS",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Simulazione d'Esame 2022.md#7": {
+    "id": "vf-qsat-non-in-p",
+    "testo": "QSAT ∉ P",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Simulazione d'Esame 2022.md#8": {
+    "id": "escludi",
+    "testo": "SMALL FACTOR ∉ P",
+    "ipotesi": "Assumendo NP ≠ co-NP"
+  },
+  "Simulazione d'esame 2.md#1": {
+    "id": "vf-lowerbound-loglog",
+    "testo": "Se ogni algoritmo che risolve SAT ha complessità Ω(n+n^((log log n)/())) allora P ≠ NP",
+    "ipotesi": ""
+  },
+  "Simulazione d'esame 2.md#2": {
+    "id": "vf-qsat-leq-sat-implica-npconp",
+    "testo": "Se QSAT si riduce in tempo polinomiale a SAT allora co-NP = NP",
+    "ipotesi": ""
+  },
+  "Simulazione d'esame 2.md#3": {
+    "id": "vf-2sat-riducibile-a-sat",
+    "testo": "2-SAT è riducibile in tempo polinomiale al problema SAT",
+    "ipotesi": ""
+  },
+  "Simulazione d'esame 2.md#4": {
+    "id": "escludi",
+    "testo": "Non esiste alcun algoritmo polinomiale che garantisce approssimazione 11/10 per il problema di trovare il minimo numero di colori per colorare propriamente i vertici di un grafo",
+    "ipotesi": ""
+  },
+  "Simulazione d'esame 2.md#5": {
+    "id": "escludi",
+    "testo": "⋃_(k>0) TIME(2^(nᵏ)) ≠ ⋃_(k>0) NTIME(2^(nᵏ))",
+    "ipotesi": ""
+  },
+  "Simulazione d'esame 2.md#6": {
+    "id": "vf-space-logn-in-np",
+    "testo": "SPACE(log n) ⊆ NP",
+    "ipotesi": ""
+  },
+  "Simulazione d'esame 2.md#7": {
+    "id": "escludi",
+    "testo": "APX ⊆ PTAS",
+    "ipotesi": ""
+  },
+  "Simulazione d'esame 2.md#8": {
+    "id": "vf-tautologia-poly-implica-np-in-p",
+    "testo": "Se esiste un algoritmo polinomiale per decidere se una formula Booleana è una tautologia, allora ogni problema in NP può essere risolto in tempo polinomiale",
+    "ipotesi": ""
+  }
+}
