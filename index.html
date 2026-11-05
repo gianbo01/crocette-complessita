@@ -691,9 +691,7 @@ function promptCorrezione(d, scelta, motivazione, perChat = false) {
     '- Se lo studente ha sbagliato vero/falso, spiega dove il ragionamento devia.',
     '',
     ...(perChat ? [
-      'Rispondi in italiano, dando del tu, in quest\'ordine: verdetto (corretta, parziale o sbagliata),',
-      'punteggio da 0 a 3, al massimo 3 passaggi mancanti o sbagliati, e 2-4 frasi su cosa funziona,',
-      'cosa no e il passaggio preciso da correggere.',
+      'Rispondi in italiano, dando del tu: verdetto (corretta, parziale o sbagliata), punteggio 0-3, cosa manca e il passaggio da correggere.',
     ] : [
       'Rispondi in italiano, dando del tu, e SOLO con questo oggetto JSON:',
       '{"verdetto": "corretta" | "parziale" | "sbagliata", "punteggio": <intero 0-3>,',
