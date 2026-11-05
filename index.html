@@ -1,68 +1,71 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Crocette di Complessità</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap">
 
 <style>
 :root {
-  --paper:      #eceef1;
-  --grid:       #dde2ea;
+  --paper:      #f7f6f3;
+  --grid:       #efede9;
   --surface:    #ffffff;
-  --surface-2:  #f5f7f9;
-  --line:       #d2d8e0;
-  --line-soft:  #e4e8ee;
-  --ink:        #161a21;
-  --ink-2:      #414a58;
-  --muted:      #6b7583;
-  --pen:        #c0392f;
-  --pen-soft:   #fdeeec;
-  --ok:         #15795e;
-  --ok-soft:    #e6f4ef;
-  --warn:       #9a6a05;
-  --warn-soft:  #fbf2df;
-  --focus:      #2f6fb0;
-  --shadow:     0 1px 2px rgba(22,26,33,.06), 0 8px 24px -12px rgba(22,26,33,.18);
+  --surface-2:  #fbfbfa;
+  --line:       #eaeaea;
+  --line-soft:  #f0efed;
+  --ink:        #111111;
+  --ink-2:      #2f3437;
+  --muted:      #6f6e69;
+  --pen:        #9f2f2d;
+  --pen-soft:   #fdebec;
+  --ok:         #346538;
+  --ok-soft:    #edf3ec;
+  --warn:       #956400;
+  --warn-soft:  #fbf3db;
+  --focus:      #1f6c9f;
+  --shadow:     0 1px 3px rgba(0,0,0,.03);
   --r:          6px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper:     #101319;
-    --grid:      #191e27;
-    --surface:   #171b23;
-    --surface-2: #1d222c;
-    --line:      #2c333f;
-    --line-soft: #232935;
-    --ink:       #e7eaef;
-    --ink-2:     #b3bcc9;
-    --muted:     #8b95a4;
-    --pen:       #ef7167;
-    --pen-soft:  #2c1c1b;
-    --ok:        #4fbe9b;
-    --ok-soft:   #14261f;
-    --warn:      #d9a840;
-    --warn-soft: #262013;
-    --focus:     #6aa9e0;
-    --shadow:    0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+    --paper:     #191919;
+    --grid:      #1e1e1d;
+    --surface:   #202020;
+    --surface-2: #252524;
+    --line:      #2f2f2e;
+    --line-soft: #282827;
+    --ink:       #ededec;
+    --ink-2:     #c7c6c3;
+    --muted:     #9b9a97;
+    --pen:       #e58a84;
+    --pen-soft:  #3a2422;
+    --ok:        #8dc191;
+    --ok-soft:   #1e2a1f;
+    --warn:      #ddb25a;
+    --warn-soft: #2f2817;
+    --focus:     #6fb2e0;
+    --shadow:    none;
   }
 }
 :root[data-theme="dark"] {
-  --paper:     #101319;
-  --grid:      #191e27;
-  --surface:   #171b23;
-  --surface-2: #1d222c;
-  --line:      #2c333f;
-  --line-soft: #232935;
-  --ink:       #e7eaef;
-  --ink-2:     #b3bcc9;
-  --muted:     #8b95a4;
-  --pen:       #ef7167;
-  --pen-soft:  #2c1c1b;
-  --ok:        #4fbe9b;
-  --ok-soft:   #14261f;
-  --warn:      #d9a840;
-  --warn-soft: #262013;
-  --focus:     #6aa9e0;
-  --shadow:    0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  --paper:     #191919;
+  --grid:      #1e1e1d;
+  --surface:   #202020;
+  --surface-2: #252524;
+  --line:      #2f2f2e;
+  --line-soft: #282827;
+  --ink:       #ededec;
+  --ink-2:     #c7c6c3;
+  --muted:     #9b9a97;
+  --pen:       #e58a84;
+  --pen-soft:  #3a2422;
+  --ok:        #8dc191;
+  --ok-soft:   #1e2a1f;
+  --warn:      #ddb25a;
+  --warn-soft: #2f2817;
+  --focus:     #6fb2e0;
+  --shadow:    none;
 }
 
 * { box-sizing: border-box; }
@@ -74,19 +77,19 @@ body {
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 26px 26px;
   color: var(--ink);
-  font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  font-family: Geist, ui-sans-serif, system-ui, sans-serif;
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 
-.mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.mono { font-family: "Geist Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 .eyebrow {
   font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--muted); font-family: "IBM Plex Sans", sans-serif;
+  color: var(--muted); font-family: Geist, sans-serif;
 }
 
 /* ---------- shell ---------- */
@@ -94,11 +97,11 @@ body {
 
 header.top {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 20px;
-  padding: 26px 0 18px; border-bottom: 2px solid var(--ink); margin-bottom: 22px;
+  padding: 40px 0 24px; border-bottom: 1px solid var(--line); margin-bottom: 28px;
 }
 header.top h1 {
-  font-family: Spectral, Georgia, serif; font-weight: 600; font-size: 25px;
-  margin: 0; letter-spacing: -.01em; text-wrap: balance;
+  font-family: Newsreader, Georgia, serif; font-weight: 500; font-size: 32px; line-height: 1.1;
+  margin: 0; letter-spacing: -.03em; text-wrap: balance;
 }
 header.top .sub { color: var(--muted); font-size: 13px; margin: 0; }
 header.top .spacer { flex: 1 1 40px; }
@@ -120,8 +123,8 @@ select { width: 100%; cursor: pointer; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 5px; }
 .chip {
-  font: 500 12px/1 "IBM Plex Sans", sans-serif;
-  padding: 6px 9px; border-radius: 999px; cursor: pointer;
+  font: 500 12px/1 Geist, sans-serif;
+  padding: 6px 9px; border-radius: var(--r); cursor: pointer;
   border: 1px solid var(--line); background: var(--surface); color: var(--ink-2);
   transition: background .12s, border-color .12s, color .12s;
 }
@@ -153,8 +156,11 @@ button { font: inherit; cursor: pointer; }
 .btn.primary:hover:not(:disabled) { background: var(--ink-2); border-color: var(--ink-2); }
 .btn.quiet { border-color: transparent; background: transparent; color: var(--muted); padding: 8px 6px; }
 .btn.quiet:hover:not(:disabled) { background: transparent; color: var(--ink); text-decoration: underline; }
+.btn:active:not(:disabled), .ansbtn:active:not(:disabled) { transform: scale(.98); }
 
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: var(--surface); }
+/* Su un telefono i cinque bottoni di «Vista» non ci stanno: scorrono dentro il riquadro. */
+header.top > div { max-width: 100%; }
+.seg { display: inline-flex; max-width: 100%; border: 1px solid var(--line); border-radius: var(--r); overflow-x: auto; background: var(--surface); }
 .seg button {
   border: 0; background: transparent; color: var(--muted);
   padding: 6px 12px; font-size: 13px; font-weight: 500; white-space: nowrap;
@@ -166,7 +172,7 @@ button { font: inherit; cursor: pointer; }
 /* ---------- question ---------- */
 .card {
   background: var(--surface); border: 1px solid var(--line);
-  border-radius: var(--r); box-shadow: var(--shadow);
+  border-radius: 10px; box-shadow: var(--shadow);
 }
 .qhead {
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
@@ -174,9 +180,9 @@ button { font: inherit; cursor: pointer; }
 }
 .qhead .spacer { flex: 1 1 20px; }
 .tag {
-  font: 500 11.5px/1 "IBM Plex Sans", sans-serif; letter-spacing: .02em;
-  padding: 4px 8px; border-radius: 3px; background: var(--surface-2);
-  color: var(--ink-2); border: 1px solid var(--line-soft); white-space: nowrap;
+  font: 500 10.5px/1 Geist, sans-serif; letter-spacing: .05em; text-transform: uppercase;
+  padding: 5px 9px; border-radius: 999px; background: var(--surface-2);
+  color: var(--ink-2); border: 1px solid var(--line); white-space: nowrap;
 }
 .tag.fonte-ufficiale { color: var(--ok); background: var(--ok-soft); border-color: transparent; }
 .tag.fonte-studenti  { color: var(--warn); background: var(--warn-soft); border-color: transparent; }
@@ -185,12 +191,12 @@ button { font: inherit; cursor: pointer; }
 .qbody { padding: 22px; display: flex; flex-direction: column; gap: 18px; }
 
 .ipotesi {
-  font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500;
+  font-family: "Geist Mono", monospace; font-size: 13px; font-weight: 500;
   color: var(--pen); background: var(--pen-soft);
-  border-left: 3px solid var(--pen); padding: 8px 12px; border-radius: 0 3px 3px 0;
+  padding: 8px 12px; border-radius: var(--r);
 }
 .affermazione {
-  font-family: Spectral, "Cambria Math", "Segoe UI Symbol", Georgia, serif;
+  font-family: Newsreader, "Cambria Math", "Segoe UI Symbol", Georgia, serif;
   font-size: 21px; line-height: 1.45;
   margin: 0; max-width: 62ch; text-wrap: pretty; color: var(--ink);
 }
@@ -209,7 +215,7 @@ button { font: inherit; cursor: pointer; }
 
 textarea {
   width: 100%; min-height: 140px; resize: vertical; line-height: 1.55;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: Geist, sans-serif;
 }
 textarea::placeholder { color: var(--muted); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
@@ -221,8 +227,8 @@ textarea::placeholder { color: var(--muted); }
 .verdict { display: flex; flex-direction: column; gap: 16px; border-top: 1px solid var(--line-soft); padding-top: 18px; }
 .vhead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .vbadge {
-  font: 600 12px/1 "IBM Plex Sans", sans-serif; letter-spacing: .05em; text-transform: uppercase;
-  padding: 6px 10px; border-radius: 3px;
+  font: 600 12px/1 Geist, sans-serif; letter-spacing: .05em; text-transform: uppercase;
+  padding: 6px 11px; border-radius: 999px;
 }
 .vbadge.ok  { background: var(--ok-soft);   color: var(--ok); }
 .vbadge.mid { background: var(--warn-soft); color: var(--warn); }
@@ -232,21 +238,21 @@ textarea::placeholder { color: var(--muted); }
 .block p { margin: 0; max-width: 68ch; }
 .block .testo { color: var(--ink-2); }
 .rif {
-  font-family: Spectral, "Cambria Math", "Segoe UI Symbol", Georgia, serif;
+  font-family: Newsreader, "Cambria Math", "Segoe UI Symbol", Georgia, serif;
   font-size: 16.5px; line-height: 1.6;
   color: var(--ink); max-width: 66ch; margin: 0;
 }
 .nota {
   font-size: 13.5px; color: var(--ink-2); background: var(--surface-2);
-  border-left: 3px solid var(--line); padding: 9px 12px; border-radius: 0 3px 3px 0; max-width: 68ch;
+  border: 1px solid var(--line); padding: 9px 12px; border-radius: var(--r); max-width: 68ch;
 }
 ul.manca { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; color: var(--ink-2); }
 ul.manca li::marker { color: var(--pen); }
 
 .keys { display: flex; flex-wrap: wrap; gap: 6px; }
 .key {
-  font: 500 12px/1 "IBM Plex Mono", monospace; padding: 5px 8px; border-radius: 3px;
-  border: 1px solid var(--line-soft); background: var(--surface-2); color: var(--muted);
+  font: 500 12px/1 "Geist Mono", monospace; padding: 5px 8px; border-radius: 4px;
+  border: 1px solid var(--line); background: var(--paper); color: var(--muted);
 }
 .key.hit { border-color: transparent; background: var(--ok-soft); color: var(--ok); }
 .selfgrade { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
@@ -256,7 +262,7 @@ ul.manca li::marker { color: var(--pen); }
 table { border-collapse: collapse; width: 100%; font-size: 14px; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line-soft); }
 th { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "IBM Plex Mono", monospace; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "Geist Mono", monospace; }
 .tablewrap { overflow-x: auto; }
 .bar { height: 6px; border-radius: 999px; background: var(--line-soft); overflow: hidden; display: flex; min-width: 70px; }
 .bar i.ok { background: var(--ok); } .bar i.mid { background: var(--warn); } .bar i.bad { background: var(--pen); }
@@ -268,30 +274,30 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "IB
 .esq { display: flex; flex-direction: column; gap: 12px; padding: 20px 22px; border-top: 1px solid var(--line-soft); }
 .esq .affermazione { font-size: 18px; }
 .esq textarea { min-height: 90px; }
-.esnum { font: 600 12px/1 "IBM Plex Mono", monospace; color: var(--muted); }
+.esnum { font: 600 12px/1 "Geist Mono", monospace; color: var(--muted); }
 .punteggio { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px; }
-.punteggio .grande { font: 600 30px/1 Spectral, Georgia, serif; }
+.punteggio .grande { font: 600 30px/1 Newsreader, Georgia, serif; }
 .tua { font-size: 14px; color: var(--ink-2); white-space: pre-wrap; margin: 0; max-width: 68ch; }
 .schema { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; border-top: 1px solid var(--line-soft); }
-.schema h3 { font: 600 19px/1.3 Spectral, Georgia, serif; margin: 0; }
-.schema .forma { font-family: Spectral, "Cambria Math", "Segoe UI Symbol", Georgia, serif; font-size: 16px; font-style: italic; color: var(--ink-2); margin: 0; max-width: 68ch; }
+.schema h3 { font: 600 19px/1.3 Newsreader, Georgia, serif; margin: 0; }
+.schema .forma { font-family: Newsreader, "Cambria Math", "Segoe UI Symbol", Georgia, serif; font-size: 16px; font-style: italic; color: var(--ink-2); margin: 0; max-width: 68ch; }
 .schema p { margin: 0; max-width: 68ch; }
 .esempi { display: flex; flex-direction: column; gap: 6px; }
 .esempi .btn { text-align: left; font-weight: 400; display: flex; gap: 10px; align-items: baseline; }
-.esempi .vf { font: 600 11px/1 "IBM Plex Mono", monospace; flex: none; }
+.esempi .vf { font: 600 11px/1 "Geist Mono", monospace; flex: none; }
 ul.regole { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; max-width: 72ch; }
 ul.regole li::marker { color: var(--muted); }
 
 /* ---------- elenco ---------- */
 .gruppo { display: flex; flex-direction: column; padding: 16px 22px; border-top: 1px solid var(--line-soft); }
 .gruppo .vhead { margin-bottom: 6px; }
-.gruppo h3 { font: 600 18px/1.3 Spectral, Georgia, serif; margin: 0; }
+.gruppo h3 { font: 600 18px/1.3 Newsreader, Georgia, serif; margin: 0; }
 details.voce { border-top: 1px solid var(--line-soft); padding: 8px 0; }
 details.voce > summary { display: flex; gap: 10px; align-items: baseline; cursor: pointer; list-style: none; }
 details.voce > summary::-webkit-details-marker { display: none; }
 details.voce > summary:hover .testo-voce, details.voce[open] > summary .testo-voce { color: var(--ink); }
-.testo-voce { font-family: Spectral, "Cambria Math", "Segoe UI Symbol", Georgia, serif; font-size: 15.5px; color: var(--ink-2); }
-.vf { font: 600 11px/1 "IBM Plex Mono", monospace; flex: none; }
+.testo-voce { font-family: Newsreader, "Cambria Math", "Segoe UI Symbol", Georgia, serif; font-size: 15.5px; color: var(--ink-2); }
+.vf { font: 600 11px/1 "Geist Mono", monospace; flex: none; }
 .vf.vero { color: var(--ok); } .vf.falso { color: var(--pen); }
 .dett { display: flex; flex-direction: column; gap: 9px; padding: 9px 0 6px 30px; }
 @media (max-width: 560px) { .dett { padding-left: 0; } }
@@ -925,7 +931,7 @@ function disegnaVerdetto(d, e, aggiorna, scelta, motivazione) {
       keys,
       el('p', { class: 'hint', text: 'È solo una ricerca testuale: un concetto espresso con altre parole non viene riconosciuto. Leggi la motivazione qui sotto e valuta tu.' })));
     if (!samplePromise && motivazione?.trim()) {
-      const b = el('button', { class: 'btn', type: 'button', style: 'align-self:flex-start' }, 'Chiedi a Claude ↗');
+      const b = el('button', { class: 'btn', type: 'button', style: 'align-self:flex-start' }, 'Chiedi a Claude');
       b.onclick = () => chiediAClaude(d, scelta, motivazione.trim());
       v.append(el('div', { class: 'block' }, b,
         el('p', { class: 'hint', text: 'Apre claude.ai con affermazione, soluzione e la tua motivazione già scritte (il prompt è anche negli appunti). Poi segna qui com\'è andata.' })));
